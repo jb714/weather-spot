@@ -17,7 +17,7 @@ class MyWeather extends Component {
   componentWillMount(){
     this.getCoords();
   }
-  
+
   getCoords(){
     window.navigator.geolocation.getCurrentPosition(position => {
       var newLat = parseInt(position.coords.latitude, 10);
@@ -41,6 +41,7 @@ class MyWeather extends Component {
         <h3> Wind speed: </h3>
         <p>Latitude: {this.state.lat}</p>
         <p>Longitude: {this.state.lon}</p>
+        <p>Lets get it</p>
       </div>
     );
   }
