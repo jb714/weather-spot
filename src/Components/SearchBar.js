@@ -2,12 +2,39 @@ import React, { Component } from 'react';
 
 
 class SearchBar extends Component {
+
+  constructor(props){
+    super(props);
+
+    this.state={
+      value: ''
+    };
+
+    this.handleSubmit=this.handleSubmit.bind(this);
+    this.handleChange=this.handleChange.bind(this);
+  }
+
+
+  handleSubmit(e){
+    e.preventDefault();
+    const city = this.state.value;
+    this.props.setCity(city);
+  }
+
+  handleChange(e){
+    this.setState({value: e.target.value});
+  }
+
+
+
   render() {
     return (
       <div className="SearchBar">
-        <h1>The Weather Spot</h1>
-        <input type="text" placeholder="What's the weather in.. ?"/>
-        <input type="submit" />
+        <h1>The Weather</h1>
+        <form onSubmit={this.handleSubmit}>
+        <input type="text" id="search" value={this.state.value} onChange={this.handleChange}/>
+        <input type="submit" id="submit" />
+        </form>
       </div>
     );
   }

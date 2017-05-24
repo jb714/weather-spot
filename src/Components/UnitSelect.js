@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class SavedSearches extends Component {
+class UnitSelect Component {
   render() {
     return (
       <div className="SavedSearches">

@@ -19,8 +19,15 @@ class App extends Component {
       tempUnit: "Fahrenheit"
     }
     this.getWeather = this.getWeather.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.setCity = this.setCity.bind(this);
   }
+
+
+  setCity(city){
+    this.setState({searchTerm: city});
+    this.getWeather();
+  }
+
 
   getWeather(){
 
@@ -39,8 +46,6 @@ class App extends Component {
           searchedWeather: {
             location: data.name,
             currentTemp: data.main.temp,
-            lowTemp: data.main.temp_min,
-            highTemp: data.main.temp_max,
             humidity: data.main.humidity,
             conditions: data.weather[0].main,
             windSpeed: data.wind.speed
@@ -59,11 +64,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SearchBar />
+        <SearchBar setCity={this.setCity}/>
         <MyWeather API_KEY={this.state.API_KEY} tempUnit={this.state.tempUnit}/>
         <hr />
         <TheirWeather searchedWeather={this.state.searchedWeather}/>
-        <input type="submit" onClick={this.getWeather} />
       </div>
     );
   }

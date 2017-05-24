@@ -14,14 +14,18 @@ class MyWeather extends Component {
   }
 
   componentDidMount(){
-    this.getMyWeather()
+    this.getMyWeather();
   }
 
   getMyWeather(){
 
     window.navigator.geolocation.getCurrentPosition(position => {
+
+        console.log(this.state.localWeather)
+        
       var newLat = position.coords.latitude;
       var newLon = position.coords.longitude;
+
 
     $.ajax({
       /*========Ternary conditional statements determining which type of temperature unit will be used===========*/
@@ -34,14 +38,10 @@ class MyWeather extends Component {
       dataType: 'json',
       cache: false,
       success: function(data){
-        console.log(data)
-
         this.setState({
           localWeather: {
             location: data.name,
             currentTemp: data.main.temp,
-            lowTemp: data.main.temp_min,
-            highTemp: data.main.temp_max,
             humidity: data.main.humidity,
             conditions: data.weather[0].main,
             windSpeed: data.wind.speed
@@ -61,8 +61,6 @@ class MyWeather extends Component {
       <div className="MyWeather">
         <h2> Here, in {this.state.localWeather.location}</h2>
         <h3> Temperature right now (in &#8457;): {this.state.localWeather.currentTemp} &#176;</h3>
-        <h4> Daily Low (in &#8457;): {this.state.localWeather.lowTemp} &#176;</h4>
-        <h4> Daily High (in &#8457;): {this.state.localWeather.highTemp} &#176;</h4>
         <h3> Humidity: {this.state.localWeather.humidity} </h3>
         <h3> Current weather conditions: {this.state.localWeather.conditions}</h3>
         <h3> Wind speed: {this.state.localWeather.windSpeed}mph</h3>
