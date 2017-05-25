@@ -8,7 +8,7 @@ class MyWeather extends Component {
     super();
 
     this.state = {
-      localWeather: {}
+      localWeather: {},
     }
     this.getMyWeather = this.getMyWeather.bind(this);
   }
@@ -16,6 +16,13 @@ class MyWeather extends Component {
   componentDidMount(){
     this.getMyWeather();
   }
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.tempUnit !== this.props.tempUnit){
+      this.getMyWeather();
+    }
+  }
+
 
   getMyWeather(){
 

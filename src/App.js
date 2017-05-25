@@ -20,24 +20,27 @@ class App extends Component {
       tempUnit: "Fahrenheit"
     }
     this.getWeather = this.getWeather.bind(this);
-    this.getMyWeather = this.getWeather.bind(this);
     this.setCity = this.setCity.bind(this);
     this.setTempUnit = this.setTempUnit.bind(this);
   }
 
   setTempUnit(unit){
-    this.setState({tempUnit: unit}, this.getWeather);
+    this.setState({tempUnit: unit}, () => {
+      //set the temperature units, and wait for a city to be entered to invoke getWeather function
+      if(this.state.searchTerm){
+        this.getWeather();
+      }
+    });
   }
 
   setCity(city){
     //Set getWeather as a callback after the state sets
-    this.setState({searchTerm: city}, this.getWeather);
-
+    this.setState({searchTerm: city},this.getWeather);
   }
 
 
-  getWeather(){
 
+  getWeather(){
     $.ajax({
       /*========Ternary conditional statements determining which type of temperature unit will be used===========*/
       url: (this.state.tempUnit === "Fahrenheit") ?
