@@ -20,17 +20,19 @@ class App extends Component {
       tempUnit: "Fahrenheit"
     }
     this.getWeather = this.getWeather.bind(this);
+    this.getMyWeather = this.getWeather.bind(this);
     this.setCity = this.setCity.bind(this);
     this.setTempUnit = this.setTempUnit.bind(this);
   }
 
   setTempUnit(unit){
-    this.setState({tempUnit: unit});
+    this.setState({tempUnit: unit}, this.getWeather);
   }
 
   setCity(city){
-    this.setState({searchTerm: city});
-    this.getWeather();
+    //Set getWeather as a callback after the state sets
+    this.setState({searchTerm: city}, this.getWeather);
+
   }
 
 

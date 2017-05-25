@@ -14,8 +14,9 @@ class UnitSelect extends Component {
 
   handleChange(e){
     const unit = e.target.value;
-    this.setState({value: e.target.value})
-    this.props.setTempUnit(unit);
+    this.setState({value: unit})
+    this.props.setTempUnit(unit)
+
   }
 
   render() {
@@ -26,7 +27,7 @@ class UnitSelect extends Component {
         </label>
           <select value={this.state.value} onChange={this.handleChange}>
           <option value="Fahrenheit" >Fahrenheit (&#8457;)</option>
-          <option value="Celsius" >Celsius (&deg;C)</option>
+          <option value="Metric" >Metric (&deg;C)</option>
           <option value="Kelvin">Kelvin (K)</option>
           </select>
       </div>

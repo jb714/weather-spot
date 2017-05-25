@@ -19,10 +19,12 @@ class SearchBar extends Component {
     e.preventDefault();
     const city = this.state.value;
     this.props.setCity(city);
+    console.log("from submit", this.state.value)
   }
 
   handleChange(e){
-    this.setState({value: e.target.value});
+    const city = e.target.value;
+    this.setState({value: city});
   }
 
 

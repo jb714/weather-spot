@@ -21,8 +21,6 @@ class MyWeather extends Component {
 
     window.navigator.geolocation.getCurrentPosition(position => {
 
-        console.log(this.state.localWeather)
-
       var newLat = position.coords.latitude;
       var newLon = position.coords.longitude;
 
