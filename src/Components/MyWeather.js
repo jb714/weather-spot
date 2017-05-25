@@ -22,7 +22,7 @@ class MyWeather extends Component {
     window.navigator.geolocation.getCurrentPosition(position => {
 
         console.log(this.state.localWeather)
-        
+
       var newLat = position.coords.latitude;
       var newLon = position.coords.longitude;
 
@@ -57,13 +57,17 @@ class MyWeather extends Component {
   }
 
   render() {
+
+    const localWeather = this.state.localWeather;
+
     return (
-      <div className="MyWeather">
-        <h2> Here, in {this.state.localWeather.location}</h2>
-        <h3> Temperature right now (in &#8457;): {this.state.localWeather.currentTemp} &#176;</h3>
-        <h3> Humidity: {this.state.localWeather.humidity} </h3>
-        <h3> Current weather conditions: {this.state.localWeather.conditions}</h3>
-        <h3> Wind speed: {this.state.localWeather.windSpeed}mph</h3>
+
+      <div className="weatherBox" id="myWeather">
+        <h2> Here, in {localWeather.location}</h2>
+        <h3> Temperature right now (in &#8457;): {localWeather.currentTemp} &#176;</h3>
+        <h3> Humidity: {localWeather.humidity} </h3>
+        <h3> Current weather conditions: {localWeather.conditions}</h3>
+        <h3> Wind speed: {localWeather.windSpeed}mph</h3>
       </div>
     );
   }

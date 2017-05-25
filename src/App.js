@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import './App.css';
 
+import UnitSelect from './Components/UnitSelect';
 import SearchBar from './Components/SearchBar';
 import MyWeather from './Components/MyWeather';
 import TheirWeather from './Components/TheirWeather';
@@ -20,8 +21,12 @@ class App extends Component {
     }
     this.getWeather = this.getWeather.bind(this);
     this.setCity = this.setCity.bind(this);
+    this.setTempUnit = this.setTempUnit.bind(this);
   }
 
+  setTempUnit(unit){
+    this.setState({tempUnit: unit});
+  }
 
   setCity(city){
     this.setState({searchTerm: city});
@@ -64,6 +69,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <UnitSelect setTempUnit={this.setTempUnit} tempUnit={this.state.tempUnit}/>
         <SearchBar setCity={this.setCity}/>
         <MyWeather API_KEY={this.state.API_KEY} tempUnit={this.state.tempUnit}/>
         <hr />

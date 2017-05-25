@@ -29,7 +29,7 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="SearchBar">
+      <div id="SearchBar">
         <h1>The Weather Spot</h1>
         <form onSubmit={this.handleSubmit}>
         <input type="text" id="search" value={this.state.value} onChange={this.handleChange}/>

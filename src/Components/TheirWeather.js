@@ -8,7 +8,7 @@ class TheirWeather extends Component {
     const searchedWeather = this.props.searchedWeather;
 
     return (
-      <div className="TheirWeather">
+      <div className="weatherBox" id="TheirWeather">
       <h2> Weather in {searchedWeather.location}</h2>
       <h3> Temperature right now (in &#8457;): {searchedWeather.currentTemp} &#176;</h3>
       <h3> Humidity: {searchedWeather.humidity} </h3>
