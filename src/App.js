@@ -6,7 +6,7 @@ import UnitSelect from './Components/UnitSelect';
 import SearchBar from './Components/SearchBar';
 import MyWeather from './Components/MyWeather';
 import TheirWeather from './Components/TheirWeather';
-import SavedSearches from './Components/TheirWeather';
+import SavedSearches from './Components/SavedSearches';
 
 class App extends Component {
 
@@ -17,7 +17,7 @@ class App extends Component {
       API_KEY: 'c48579c123cab4d7e33f94e32b70aa4a',
       searchTerm: '',
       searchedWeather: {},
-      tempUnit: "Fahrenheit"
+      tempUnit: "Fahrenheit",
     }
     this.getWeather = this.getWeather.bind(this);
     this.setCity = this.setCity.bind(this);
@@ -37,7 +37,6 @@ class App extends Component {
     //Set getWeather as a callback after the state sets
     this.setState({searchTerm: city},this.getWeather);
   }
-
 
 
   getWeather(){
@@ -61,7 +60,6 @@ class App extends Component {
             windSpeed: data.wind.speed
           }
         })
-
       }.bind(this),
       error: function(xhr, status, err){
         console.log(err);
@@ -69,16 +67,17 @@ class App extends Component {
     });
   }
 
-
-
   render() {
     return (
       <div className="App">
         <UnitSelect setTempUnit={this.setTempUnit} tempUnit={this.state.tempUnit}/>
         <SearchBar setCity={this.setCity}/>
-        <MyWeather API_KEY={this.state.API_KEY} tempUnit={this.state.tempUnit}/>
         <hr />
-        <TheirWeather searchedWeather={this.state.searchedWeather}/>
+        <MyWeather API_KEY={this.state.API_KEY} tempUnit={this.state.tempUnit} />
+        <hr />
+        <TheirWeather searchedWeather={this.state.searchedWeather} tempUnit={this.state.tempUnit} />
+        <hr />
+        <SavedSearches />
       </div>
     );
   }

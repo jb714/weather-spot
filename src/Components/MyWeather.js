@@ -8,9 +8,10 @@ class MyWeather extends Component {
     super();
 
     this.state = {
-      localWeather: {},
+      localWeather: {}
     }
     this.getMyWeather = this.getMyWeather.bind(this);
+    this.renderUnits = this.renderUnits.bind(this);
   }
 
   componentDidMount(){
@@ -18,16 +19,34 @@ class MyWeather extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-    if(nextProps.tempUnit !== this.props.tempUnit){
+    if(nextProps.tempUnit && nextProps.tempUnit !== this.props.tempUnit){
       this.getMyWeather();
+      this.renderUnits();
     }
   }
 
+  renderUnits(){
+    let temperature = null;
+    let windSpeed = null;
+    const localWeather = this.state.localWeather;
+
+    //Conditional rendering block
+      if(this.props.tempUnit === "Fahrenheit"){
+        temperature = <h3> Temperature right now : {localWeather.currentTemp} &#8457;</h3>
+        windSpeed = <h3> Wind speed: {localWeather.windSpeed} mph</h3>
+      } else if (this.props.tempUnit === "Metric"){
+        temperature = <h3> Temperature right now : {localWeather.currentTemp} &deg;C</h3>
+        windSpeed = <h3> Wind speed: {localWeather.windSpeed} meters/second</h3>
+      } else {
+        temperature = <h3> Temperature right now : {localWeather.currentTemp} K</h3>
+        windSpeed = <h3> Wind speed: {localWeather.windSpeed} meters/second</h3>
+      }
+      return {temperature: temperature, windSpeed: windSpeed}
+  }
 
   getMyWeather(){
 
     window.navigator.geolocation.getCurrentPosition(position => {
-
       var newLat = position.coords.latitude;
       var newLon = position.coords.longitude;
 
@@ -57,22 +76,22 @@ class MyWeather extends Component {
         console.log(err);
       }
     });
-
     })
   }
 
   render() {
-
     const localWeather = this.state.localWeather;
+    const temperature = this.renderUnits().temperature;
+    const windSpeed = this.renderUnits().windSpeed;
 
     return (
 
       <div className="weatherBox" id="myWeather">
         <h2> Here, in {localWeather.location}</h2>
-        <h3> Temperature right now (in &#8457;): {localWeather.currentTemp} &#176;</h3>
+        {temperature}
         <h3> Humidity: {localWeather.humidity} </h3>
         <h3> Current weather conditions: {localWeather.conditions}</h3>
-        <h3> Wind speed: {localWeather.windSpeed}mph</h3>
+        {windSpeed}
       </div>
     );
   }
