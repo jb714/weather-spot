@@ -11,7 +11,6 @@ class MyWeather extends Component {
       localWeather: {}
     }
     this.getMyWeather = this.getMyWeather.bind(this);
-    this.renderUnits = this.renderUnits.bind(this);
   }
 
   componentDidMount(){
@@ -19,30 +18,11 @@ class MyWeather extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-    if(nextProps.tempUnit !== this.props.tempUnit){
+    if(nextProps.scale !== this.props.scale){
       this.getMyWeather();
-      this.renderUnits();
     }
   }
 
-  renderUnits(){
-    let temperature = null;
-    let windSpeed = null;
-    const localWeather = this.state.localWeather;
-
-    //Conditional rendering block
-      if(this.props.tempUnit === "Fahrenheit"){
-        temperature = <h3> Temperature right now : {localWeather.currentTemp} &#8457;</h3>
-        windSpeed = <h3> Wind speed: {localWeather.windSpeed} mph</h3>
-      } else if (this.props.tempUnit === "Metric"){
-        temperature = <h3> Temperature right now : {localWeather.currentTemp} &deg;C</h3>
-        windSpeed = <h3> Wind speed: {localWeather.windSpeed} meters/second</h3>
-      } else {
-        temperature = <h3> Temperature right now : {localWeather.currentTemp} K</h3>
-        windSpeed = <h3> Wind speed: {localWeather.windSpeed} meters/second</h3>
-      }
-      return {temperature: temperature, windSpeed: windSpeed}
-  }
 
   getMyWeather(){
 
@@ -53,9 +33,9 @@ class MyWeather extends Component {
 
     $.ajax({
       /*========Ternary conditional statements determining which type of temperature unit will be used===========*/
-      url: (this.props.tempUnit === "Fahrenheit") ?
+      url: (this.props.scale === "Fahrenheit") ?
       "http://api.openweathermap.org/data/2.5/weather?lat="+newLat+"&lon="+newLon+"&units=imperial&appid=" + this.props.API_KEY:
-      (this.props.tempUnit === "Metric") ?
+      (this.props.scale === "Metric") ?
       "http://api.openweathermap.org/data/2.5/weather?lat="+newLat+"&lon="+newLon+"&units=metric&appid=" + this.props.API_KEY :
       "http://api.openweathermap.org/data/2.5/weather?lat="+newLat+"&lon="+newLon+"&units=default&appid=" + this.props.API_KEY
       ,
@@ -81,17 +61,15 @@ class MyWeather extends Component {
 
   render() {
     const localWeather = this.state.localWeather;
-    const temperature = this.renderUnits().temperature;
-    const windSpeed = this.renderUnits().windSpeed;
 
     return (
 
-      <div className="weatherBox" id="myWeather">
+      <div className="weatherBox" id="MyWeather">
         <h2> Here, in {localWeather.location}</h2>
-        {temperature}
+        <h3> Temperature right now : {localWeather.currentTemp}</h3> {this.props.tempUnit}
         <h3> Humidity: {localWeather.humidity} </h3>
         <h3> Current weather conditions: {localWeather.conditions}</h3>
-        {windSpeed}
+        <h3>Wind speed: {localWeather.windSpeed}</h3>   {this.props.windUnit}
       </div>
     );
   }

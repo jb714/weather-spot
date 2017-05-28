@@ -13,15 +13,29 @@ class UnitSelect extends Component {
   }
 
   handleChange(e){
-    const unit = e.target.value;
-    this.setState({value: unit})
-    this.props.setTempUnit(unit)
+    const scale = e.target.value;
+    let tempUnit = <h3>&#8457;</h3>;
+    let windUnit = "meters/second";
+
+    if(scale === "Fahrenheit"){
+      tempUnit= <h3>&#8457;</h3>;
+      windUnit= "mph";
+
+    } else if (scale === "Metric"){
+      tempUnit= <h3>&deg;C</h3>;
+      windUnit: "meters/second";
+    } else {
+      tempUnit= <h3>K</h3>;
+      windUnit= "meters/second";
+    }
+    this.setState({value: scale})
+    this.props.setScale(scale,tempUnit,windUnit)
 
   }
 
   render() {
     return (
-      <div className="UnitSelect">
+      <div id="UnitSelect">
         <label>
         Temperature Unit: &ensp;
         </label>

@@ -1,15 +1,20 @@
 .App {
-  text-align: center;
   font-family: Arial;
 }
 
 #search{
-  height: 20px;
-  width: 200px;
-  font-size: 18px;
-  margin: 5px;
+  height: 25px;
+  width: 300px;
+  font-size: 20px;
 }
 
 #SearchBar{
 
+  text-align: center;
+  display: inline-block;
+}
+
+#UnitSelect{
+  float: right;
+  display: inline-block;
 }
