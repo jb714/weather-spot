@@ -19,7 +19,7 @@ class MyWeather extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-    if(nextProps.tempUnit && nextProps.tempUnit !== this.props.tempUnit){
+    if(nextProps.tempUnit !== this.props.tempUnit){
       this.getMyWeather();
       this.renderUnits();
     }

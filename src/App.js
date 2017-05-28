@@ -18,6 +18,7 @@ class App extends Component {
       searchTerm: '',
       searchedWeather: {},
       tempUnit: "Fahrenheit",
+      savedCities: []
     }
     this.getWeather = this.getWeather.bind(this);
     this.setCity = this.setCity.bind(this);
@@ -25,12 +26,7 @@ class App extends Component {
   }
 
   setTempUnit(unit){
-    this.setState({tempUnit: unit}, () => {
-      //set the temperature units, and wait for a city to be entered to invoke getWeather function
-      if(this.state.searchTerm){
-        this.getWeather();
-      }
-    });
+    this.setState({tempUnit: unit}, this.getWeather);
   }
 
   setCity(city){
@@ -75,9 +71,9 @@ class App extends Component {
         <hr />
         <MyWeather API_KEY={this.state.API_KEY} tempUnit={this.state.tempUnit} />
         <hr />
-        <TheirWeather searchedWeather={this.state.searchedWeather} tempUnit={this.state.tempUnit} />
+        {this.state.searchTerm ? <TheirWeather searchedWeather={this.state.searchedWeather} tempUnit={this.state.tempUnit} /> : <h3>Enter a city to get started</h3>}
         <hr />
-        <SavedSearches />
+        <SavedSearches savedCities={this.props.savedCities}/>
       </div>
     );
   }

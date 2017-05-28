@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import SavedSearches from './SavedSearches'
+
 
 class TheirWeather extends Component {
 
@@ -35,6 +37,7 @@ class TheirWeather extends Component {
       <h3> Humidity: {searchedWeather.humidity} </h3>
       <h3> Current weather conditions: {searchedWeather.conditions}</h3>
       {windSpeed}
+      <button>Save</button>
       </div>
     );
   }

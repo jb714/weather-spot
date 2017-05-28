@@ -5,7 +5,6 @@ class SavedSearches extends Component {
   render() {
     return (
       <div className="SavedSearches">
-
       </div>
     );
   }
