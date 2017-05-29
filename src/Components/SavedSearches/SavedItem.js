@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import TheirWeather from "./TheirWeather"
 
 
 class SavedItem extends Component {

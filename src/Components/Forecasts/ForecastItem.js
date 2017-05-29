@@ -7,15 +7,14 @@ class ForecastItem extends Component {
   render() {
     const item = this.props.item;
     const tempUnit = this.props.tempUnit;
-    const windUnit = this.props.windUnit;
     console.log(item);
 
 
     return (
-      <div>
-        <p>Avg. Temp: {item.temp.day}</p>{tempUnit}
-        <p>Humidity:{item.humidity}</p>
-        <p>Forecast:{item.weather[0].main}</p>
+      <div className="rowItem">
+        <h5>Avg. Temp: {item.temp.day} {tempUnit}</h5>
+        <h5>Humidity: {item.humidity}</h5>
+        <h5>Forecast: {item.weather[0].main}</h5>
         <hr />
       </div>
     );

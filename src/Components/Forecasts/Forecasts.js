@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TheirWeather from "./TheirWeather";
+import './Forecasts.css';
 import ForecastItem from "./ForecastItem";
 
 
@@ -16,7 +16,7 @@ class Forecasts extends Component {
     }
 
     return (
-      <div className="SavedSearches">
+      <div id="forecasts">
       <h3>7 day forecast:</h3>
       {forecasts}
       </div>

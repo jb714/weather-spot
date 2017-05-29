@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import './App.css';
 
-import UnitSelect from './Components/UnitSelect';
-import SearchBar from './Components/SearchBar';
-import MyWeather from './Components/MyWeather';
-import TheirWeather from './Components/TheirWeather';
-import Forecasts from './Components/Forecasts';
-import SavedSearches from './Components/SavedSearches';
-import SaveWeather from './Components/SaveWeather';
+import UnitSelect from './Components/UnitSelect/UnitSelect';
+import SearchBar from './Components/SearchBar/SearchBar';
+import MyWeatherWrapper from './Components/MyWeather/MyWeatherWrapper';
+import TheirWeather from './Components/TheirWeather/TheirWeather';
+import Forecasts from './Components/Forecasts/Forecasts';
+import SavedSearches from './Components/SavedSearches/SavedSearches';
+import SaveWeather from './Components/SavedSearches/SaveWeather';
 
 class App extends Component {
 
@@ -22,7 +22,7 @@ class App extends Component {
       saved: [],
       forecasts: {},
       scale: "Fahrenheit",
-      tempUnit: <h3>&#8457;</h3>,
+      tempUnit: <span>&#8457;</span>,
       windUnit: "mph",
 
     }
@@ -103,13 +103,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <UnitSelect setScale={this.setScale} scale={this.state.scale}/>
-        <SearchBar setCity={this.setCity}/>
-        <hr />
-        <MyWeather API_KEY={this.state.API_KEY} scale={this.state.scale} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit}/>
-        <hr />
-        {this.state.searchTerm ? <TheirWeather searchedWeather={this.state.searchedWeather} scale={this.state.scale} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit}/> : <h3>Enter a city to get started</h3>}
-        {this.state.searchTerm ? <Forecasts forecasts={this.state.forecasts} scale={this.state.scale} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit}/> : ''}
+        <div id="headSection">
+          <UnitSelect setScale={this.setScale} scale={this.state.scale}/>
+          <SearchBar setCity={this.setCity}/>
+          <MyWeatherWrapper API_KEY={this.state.API_KEY} scale={this.state.scale} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit}/>
+        </div>
+        <div id="bodySection">
+
+          {this.state.searchTerm ?
+            <TheirWeather searchedWeather={this.state.searchedWeather} scale={this.state.scale} tempUnit={this.state.tempUnit}
+            windUnit={this.state.windUnit}/> : <h3>Enter a city to get started</h3>}
+
+          {this.state.searchTerm ? <Forecasts forecasts={this.state.forecasts} scale={this.state.scale}
+          tempUnit={this.state.tempUnit} windUnit={this.state.windUnit}/> : ''}
+
+        </div>
         <SaveWeather saveWeather={this.saveWeather} searchedWeather={this.state.searchedWeather}  />
         <SavedSearches saved={this.state.saved} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit}/>
       </div>

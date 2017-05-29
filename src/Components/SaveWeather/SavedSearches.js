@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import TheirWeather from "./TheirWeather";
+import './SearchBar.css'
+
 import SavedItem from "./SavedItem";
 
 
@@ -7,7 +8,7 @@ class SavedSearches extends Component {
 
   constructor(){
     super();
-    this.tempUnit = <h6>&#8457;</h6>
+    this.tempUnit = <span>&#8457;</span>
     this.windUnit = "mph";
   }
 

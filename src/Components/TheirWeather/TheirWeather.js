@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-import SavedSearches from './SavedSearches'
+import './TheirWeather.css'
 
 
 class TheirWeather extends Component {

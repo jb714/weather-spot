@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './UnitSelect.css'
 
 
 class UnitSelect extends Component {
@@ -14,28 +15,34 @@ class UnitSelect extends Component {
 
   handleChange(e){
     const scale = e.target.value;
-    let tempUnit = <h3>&#8457;</h3>;
+    let tempUnit = <span>&#8457;</span>;
     let windUnit = "meters/second";
 
     if(scale === "Fahrenheit"){
-      tempUnit= <h3>&#8457;</h3>;
+      tempUnit= <span>&#8457;</span>;
       windUnit= "mph";
 
     } else if (scale === "Metric"){
-      tempUnit= <h3>&deg;C</h3>;
+      tempUnit= <span>&deg;C</span>;
       windUnit: "meters/second";
     } else {
-      tempUnit= <h3>K</h3>;
+      tempUnit= <span>K</span>;
       windUnit= "meters/second";
     }
     this.setState({value: scale})
+
     this.props.setScale(scale,tempUnit,windUnit)
 
   }
 
   render() {
+    const styles={
+      float: "right",
+      margin: "15px 50px 0px 0px",
+      fontSize: "18px"
+    }
     return (
-      <div id="UnitSelect">
+      <div id="UnitSelect" style={styles}>
         <label>
         Temperature Unit: &ensp;
         </label>
