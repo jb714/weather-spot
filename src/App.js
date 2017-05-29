@@ -4,7 +4,7 @@ import './App.css';
 
 import UnitSelect from './Components/UnitSelect/UnitSelect';
 import SearchBar from './Components/SearchBar/SearchBar';
-import MyWeatherWrapper from './Components/MyWeather/MyWeatherContainer';
+import MyWeatherContainer from './Components/MyWeather/MyWeatherContainer';
 import TheirWeather from './Components/TheirWeather/TheirWeather';
 import Forecasts from './Components/Forecasts/Forecasts';
 import SavedSearches from './Components/SavedSearches/SavedSearches';
