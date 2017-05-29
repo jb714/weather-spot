@@ -5,7 +5,6 @@ class SaveWeather extends Component {
 
   constructor(props){
     super(props);
-
     this.saveWeather = this.saveWeather.bind(this);
   }
 
