@@ -3,7 +3,7 @@ import MyWeather from './MyWeather';
 import $ from 'jquery';
 
 
-class MyWeatherWrapper extends Component {
+class MyWeatherContainer extends Component {
 
   constructor(){
     super();
@@ -71,4 +71,4 @@ class MyWeatherWrapper extends Component {
   }
 }
 
-export default MyWeatherWrapper;
+export default MyWeatherContainer;

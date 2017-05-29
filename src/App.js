@@ -4,7 +4,7 @@ import './App.css';
 
 import UnitSelect from './Components/UnitSelect/UnitSelect';
 import SearchBar from './Components/SearchBar/SearchBar';
-import MyWeatherWrapper from './Components/MyWeather/MyWeatherWrapper';
+import MyWeatherWrapper from './Components/MyWeather/MyWeatherContainer';
 import TheirWeather from './Components/TheirWeather/TheirWeather';
 import Forecasts from './Components/Forecasts/Forecasts';
 import SavedSearches from './Components/SavedSearches/SavedSearches';
@@ -106,7 +106,7 @@ class App extends Component {
         <div id="headSection">
           <UnitSelect setScale={this.setScale} scale={this.state.scale}/>
           <SearchBar setCity={this.setCity}/>
-          <MyWeatherWrapper API_KEY={this.state.API_KEY} scale={this.state.scale} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit}/>
+          <MyWeatherContainer API_KEY={this.state.API_KEY} scale={this.state.scale} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit}/>
         </div>
         <div id="bodySection">
 
