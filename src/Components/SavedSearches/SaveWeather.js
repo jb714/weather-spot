@@ -15,7 +15,9 @@ class SaveWeather extends Component {
   render() {
       return(
       <div id="SaveWeather">
-      <input type="submit" onClick={this.saveWeather} value="Save"/>
+        <div id="SaveWeather">
+          <input type="submit" onClick={this.saveWeather} value="Save"/>
+        </div>
       </div>
     );
   }

@@ -37,7 +37,7 @@ class SearchBar extends Component {
           <h1>The Weather Spot</h1>
           <form onSubmit={this.handleSubmit}>
           <input type="text" className="search" placeholder="Enter a city" value={this.state.value} onChange={this.handleChange}/>
-          <input type="submit" id="submit" />
+          <button type="submit" className="submit">Get Weather</button>
           </form>
         </div>
       </div>

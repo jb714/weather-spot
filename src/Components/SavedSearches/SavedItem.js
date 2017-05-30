@@ -11,7 +11,6 @@ class SavedItem extends Component {
 
       <div className="SavedSearches">
         <p>Right now, {item.location} is experiencing {item.description}</p>
-        <hr />
       </div>
     );
   }

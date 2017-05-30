@@ -11,11 +11,11 @@ class MyWeather extends Component {
 
       <div id="MyWeather">
         <div id="MyWeatherWrapper">
-        <h2> Here, in {localWeather.location}</h2>
-        <h3> Temperature right now : {localWeather.currentTemp} {this.props.tempUnit}</h3>
-        <h3> Humidity: {localWeather.humidity} </h3>
-        <h3> Current weather conditions: {localWeather.conditions}</h3>
-        <h3>Wind speed: {localWeather.windSpeed} {this.props.windUnit}</h3>
+        <h3> Here, in {localWeather.location}</h3>
+        <h4> Temperature right now : {localWeather.currentTemp} {this.props.tempUnit}</h4>
+        <h4> Humidity: {localWeather.humidity} </h4>
+        <h4> Current weather conditions: {localWeather.conditions}</h4>
+        <h4>Wind speed: {localWeather.windSpeed} {this.props.windUnit}</h4>
         </div>
       </div>
     );

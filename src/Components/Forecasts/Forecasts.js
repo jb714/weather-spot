@@ -16,9 +16,11 @@ class Forecasts extends Component {
     }
 
     return (
-      <div id="forecasts">
-      <h3>7 day forecast:</h3>
-      {forecasts}
+      <div id="Forecasts">
+      <h3>7 day forecast in {this.props.searchedWeather.location}:</h3>
+        <div id="ForecastsWrapper">
+        {forecasts}
+        </div>
       </div>
     );
   }

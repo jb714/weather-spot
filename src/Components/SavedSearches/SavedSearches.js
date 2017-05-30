@@ -20,8 +20,8 @@ class SavedSearches extends Component {
         </div>
       })
     return (
-      <div className="SavedSearches">
-      <h3>Snapshots</h3>
+      <div id="SavedSearches">
+      <h3>Saved Snapshots</h3>
       {saved}
       </div>
     );
