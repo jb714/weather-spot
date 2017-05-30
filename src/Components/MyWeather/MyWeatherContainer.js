@@ -55,7 +55,7 @@ class MyWeatherContainer extends Component {
         })
       }.bind(this),
       error: function(xhr, status, err){
-        alert("Hey! Looks like your browser is doing a great job of keep you protected from scripts that don't come through HTTPS. Unfortunately, it's keeping the app from working as intended. If you permit this script to run, all it will do is get your browser's geolocation. I'll look in to upgrading my Heroku hosting account to one with SSL controls :) Click 'Load unsafe scripts'; unless, of course, you don't want to.")
+        alert("Hey! Looks like your browser is doing a great job of keeping you protected from scripts that don't come securely through HTTPS. Unfortunately, it's keeping the app from working as intended. If you permit this script to run, all it will do is get your browser's geolocation. I'll look in to upgrading my Heroku hosting account to one with SSL/HTTPS controls :) On Chrome, click the shield with the red box in the browser/search bar, and hit 'Load unsafe scripts'; unless, of course, you don't want to.")
         console.log("This is the error",err);
       }
     });

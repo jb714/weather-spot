@@ -74,6 +74,7 @@ hr{
 
 /*****************++++++++++++++++++++++Body Section++++++++++++++++++++++*****************/
   #bodySection{
+    border: solid 1px #F3F3F3;
     background-color: #F3F3F3;
     background-image: url('./assets/pexels-black-n-white-clouds.jpg');
     background-position: top;
