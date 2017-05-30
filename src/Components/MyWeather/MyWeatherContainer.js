@@ -9,7 +9,7 @@ class MyWeatherContainer extends Component {
     super();
 
     this.state = {
-      localWeather: {}
+      localWeather: {},
     }
     this.getMyWeather = this.getMyWeather.bind(this);
   }
@@ -30,7 +30,7 @@ class MyWeatherContainer extends Component {
     window.navigator.geolocation.getCurrentPosition(position => {
       var newLat = position.coords.latitude;
       var newLon = position.coords.longitude;
-      console.log(position.coords.accuracy)
+      var accuracy =position.coords.accuracy;
 
 
     $.ajax({
@@ -55,7 +55,8 @@ class MyWeatherContainer extends Component {
         })
       }.bind(this),
       error: function(xhr, status, err){
-        console.log(err);
+
+        console.log("This is the error",err);
       }
     });
     })
