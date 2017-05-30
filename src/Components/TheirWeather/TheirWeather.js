@@ -12,10 +12,10 @@ class TheirWeather extends Component {
     return (
       <div className="weatherBox" id="TheirWeather">
       <h2> Weather in {searchedWeather.location}</h2>
-      <h3>Temperature right now : {searchedWeather.currentTemp}</h3> {this.props.tempUnit}
+      <h3>Temperature right now : {searchedWeather.currentTemp} {this.props.tempUnit}</h3>
       <h3> Humidity: {searchedWeather.humidity} </h3>
       <h3> Current weather conditions: {searchedWeather.conditions}</h3>
-      <h3>Wind speed: {searchedWeather.windSpeed}</h3> {this.props.windUnit}
+      <h3>Wind speed: {searchedWeather.windSpeed} {this.props.windUnit}</h3> 
       </div>
     );
   }

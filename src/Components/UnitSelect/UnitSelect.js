@@ -36,21 +36,19 @@ class UnitSelect extends Component {
   }
 
   render() {
-    const styles={
-      float: "right",
-      margin: "15px 50px 0px 0px",
-      fontSize: "18px"
-    }
+
     return (
-      <div id="UnitSelect" style={styles}>
-        <label>
-        Temperature Unit: &ensp;
-        </label>
-          <select value={this.state.value} onChange={this.handleChange}>
-          <option value="Fahrenheit" >Fahrenheit (&#8457;)</option>
-          <option value="Metric" >Metric (&deg;C)</option>
-          <option value="Kelvin">Kelvin (K)</option>
-          </select>
+      <div id="UnitSelect" >
+        <div className="wrapper" id="UnitSelectWrapper">
+            <label>
+            Temperature Unit: &ensp;
+            </label>
+            <select value={this.state.value} onChange={this.handleChange}>
+            <option value="Fahrenheit" >Fahrenheit (&#8457;)</option>
+            <option value="Metric" >Metric (&deg;C)</option>
+            <option value="Kelvin">Kelvin (K)</option>
+            </select>
+          </div>
       </div>
     );
   }

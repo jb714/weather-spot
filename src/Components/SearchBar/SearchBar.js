@@ -33,11 +33,13 @@ class SearchBar extends Component {
 
     return (
       <div id="SearchBar" >
-        <h1>The Weather Spot</h1>
-        <form onSubmit={this.handleSubmit}>
-        <input type="text" id="search" placeholder="Enter a city" value={this.state.value} onChange={this.handleChange}/>
-        <input type="submit" id="submit" />
-        </form>
+        <div className="wrapper" id="SearchBarWrapper">
+          <h1>The Weather Spot</h1>
+          <form onSubmit={this.handleSubmit}>
+          <input type="text" className="search" placeholder="Enter a city" value={this.state.value} onChange={this.handleChange}/>
+          <input type="submit" id="submit" />
+          </form>
+        </div>
       </div>
     );
   }

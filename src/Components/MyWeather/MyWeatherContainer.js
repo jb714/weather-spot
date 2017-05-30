@@ -30,6 +30,7 @@ class MyWeatherContainer extends Component {
     window.navigator.geolocation.getCurrentPosition(position => {
       var newLat = position.coords.latitude;
       var newLon = position.coords.longitude;
+      console.log(position.coords.accuracy)
 
 
     $.ajax({
@@ -64,8 +65,8 @@ class MyWeatherContainer extends Component {
 
     return (
 
-      <div className="weatherBox" id="MyWeather">
-        <MyWeather localWeather={this.state.localWeather} />
+      <div>
+        <MyWeather localWeather={this.state.localWeather} tempUnit={this.props.tempUnit} windUnit={this.props.windUnit}/>
       </div>
     );
   }

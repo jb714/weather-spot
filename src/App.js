@@ -104,12 +104,12 @@ class App extends Component {
     return (
       <div className="App">
         <div id="headSection">
-          <UnitSelect setScale={this.setScale} scale={this.state.scale}/>
-          <SearchBar setCity={this.setCity}/>
           <MyWeatherContainer API_KEY={this.state.API_KEY} scale={this.state.scale} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit}/>
-        </div>
+          <SearchBar setCity={this.setCity}/>
+          <UnitSelect setScale={this.setScale} scale={this.state.scale}/>
+          </div>
+          <hr />
         <div id="bodySection">
-
           {this.state.searchTerm ?
             <TheirWeather searchedWeather={this.state.searchedWeather} scale={this.state.scale} tempUnit={this.state.tempUnit}
             windUnit={this.state.windUnit}/> : <h3>Enter a city to get started</h3>}
