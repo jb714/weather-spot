@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './TheirWeather.css'
 
 
 class TheirWeather extends Component {
@@ -12,7 +11,7 @@ class TheirWeather extends Component {
     return (
       <div id="TheirWeather">
         <div id="TheirWeatherInner">
-          <h2> Weather in {searchedWeather.location}</h2>
+          <h2> Over there in {searchedWeather.location}</h2>
           <h3>Temperature right now : {searchedWeather.currentTemp} {this.props.tempUnit}</h3>
           <h3> Humidity: {searchedWeather.humidity} </h3>
           <h3> Current weather conditions: {searchedWeather.conditions}</h3>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './SavedSearches.css'
 
 import SavedItem from "./SavedItem";
 

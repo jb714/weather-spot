@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Forecasts.css';
 import ForecastItem from "./ForecastItem";
 
 

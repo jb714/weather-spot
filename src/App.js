@@ -113,17 +113,15 @@ class App extends Component {
         <MyWeatherContainer API_KEY={this.state.API_KEY} scale={this.state.scale} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit}/>
           {this.state.searchTerm ? <TheirWeather searchedWeather={this.state.searchedWeather} scale={this.state.scale} tempUnit={this.state.tempUnit}
           windUnit={this.state.windUnit}/>
-            : <h3>Enter a city to get started</h3>}
-
+            : <h3 id="whiteText">Enter a city to get started</h3>}
 
           {this.state.searchTerm ? <Forecasts forecasts={this.state.forecasts} scale={this.state.scale}
           tempUnit={this.state.tempUnit} windUnit={this.state.windUnit} searchedWeather={this.state.searchedWeather}/>: ''}
-
-            <SaveWeather saveWeather={this.saveWeather} searchedWeather={this.state.searchedWeather}  />
-
+          <div id="base">
+          <SaveWeather saveWeather={this.saveWeather} searchedWeather={this.state.searchedWeather}  />
+          </div>
         </div>
-
-
+        <div id="footer"></div>
       </div>
     );
   }
