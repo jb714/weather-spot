@@ -57,9 +57,12 @@ hr{
   height: 100%;
   float: left;
   display: inline-block;
+
+}
+
+#SavedSearchesInner{
   overflow-y: auto;
   direction: rtl;
-
 }
 
 #whiteText{
@@ -71,7 +74,7 @@ hr{
 /*****************++++++++++++++++++++++Body Section++++++++++++++++++++++*****************/
   #bodySection{
     background-color: #F3F3F3;
-    background-image: url('./assets/pexels-black-n-white-clouds.jpeg');
+    background-image: url('./assets/pexels-black-n-white-clouds.jpg');
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
