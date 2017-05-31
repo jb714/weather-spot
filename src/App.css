@@ -73,6 +73,9 @@ hr{
 
 
 /*****************++++++++++++++++++++++Body Section++++++++++++++++++++++*****************/
+.cardHead{
+
+}
   #bodySection{
     border: solid 1px #F3F3F3;
     background-color: #F3F3F3;
@@ -92,7 +95,7 @@ hr{
 #TheirWeather{
   clear: both;
   width: 30%;
-  height: 250px;
+  height: 280px;
   text-align: center;
   display: inline-block;
   background-color: white;
@@ -103,7 +106,7 @@ hr{
 /*Forecasts and subcomponents styling*/
 #Forecasts{
   width: 30%;
-  height: 250px;
+  height: 280px;
   margin-right: 10px;
   float: right;
   display: inline-block;
@@ -124,7 +127,7 @@ hr{
   margin-left: 10px;
   padding-left: 10px;
   width: 30%;
-  height: 250px;
+  height: 280px;
   float: left;
   display: inline-block;
   background-color: white;
