@@ -118,7 +118,7 @@ class App extends Component {
           {this.state.searchTerm ? <Forecasts forecasts={this.state.forecasts} scale={this.state.scale}
           tempUnit={this.state.tempUnit} windUnit={this.state.windUnit} searchedWeather={this.state.searchedWeather}/>: ''}
           <div id="base">
-          <SaveWeather saveWeather={this.saveWeather} searchedWeather={this.state.searchedWeather}  />
+          {this.state.searchTerm ? <SaveWeather saveWeather={this.saveWeather} searchedWeather={this.state.searchedWeather}  /> : '' }
           </div>
         </div>
         <div id="footer"></div>
