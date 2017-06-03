@@ -9,6 +9,7 @@ import TheirWeather from './Components/TheirWeather/TheirWeather';
 import Forecasts from './Components/Forecasts/Forecasts';
 import SavedSearches from './Components/SavedSearches/SavedSearches';
 import SaveWeather from './Components/SavedSearches/SaveWeather';
+import Footer from './Components/Footer/Footer';
 
 class App extends Component {
 
@@ -121,7 +122,7 @@ class App extends Component {
           {this.state.searchTerm ? <SaveWeather saveWeather={this.saveWeather} searchedWeather={this.state.searchedWeather}  /> : '' }
           </div>
         </div>
-        <div id="footer"></div>
+        <Footer />
       </div>
     );
   }

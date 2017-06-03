@@ -29,16 +29,15 @@ class SearchBar extends Component {
   }
 
 
-
   render() {
 
     return (
       <div id="SearchBar" >
         <div className="wrapper" id="SearchBarWrapper">
           <div id="Header">
-            <img src={storm} className="headItem" className="headImg"/>
-            <h1 className="headItem">The Weather Spot</h1>
-            <img src={sun} className="headItem" className="headImg"/>
+            <img src={storm} alt="storm icon" className="bannerItem" className="icon"/>
+            <h1 className="bannerItem">The Weather Spot</h1>
+            <img src={sun} alt="sun icon" className="bannerItem" className="icon"/>
           </div>
           <form onSubmit={this.handleSubmit}>
           <input type="text" className="search" placeholder="Enter a city" value={this.state.value} onChange={this.handleChange}/>

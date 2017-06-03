@@ -40,12 +40,13 @@ hr{
   vertical-align: middle;
 }
 
-.headItem{
+.bannerItem{
   padding: 0px 5px;
   display: inline-block;
+  color: #FFFFFF;
 }
 
-.headImg{
+.icon{
   width: 45px;
   vertical-align: middle;
 }
@@ -89,9 +90,6 @@ hr{
   #bodySection{
     border: 1px solid #FFFFFF;
     background-color: #5ad9f9;
-
-
-
     padding-top: 100px;
     padding-bottom: 100px;
     text-align: center;
@@ -164,8 +162,30 @@ hr{
   clear: both;
 }
 
-#footer{
+#Footer{
   background-color: #00AAFF;
-  height: 170px;
+  height: 300px;
   clear: both;
+}
+
+#attribution{
+  padding-left: 10px;
+  color: white;
+  display: inline-block;
+  float: left;
+}
+#githubLink{
+  padding-right: 10px;
+  color: white;
+  display: inline-block;
+  float: right;
+}
+
+a{
+  color: #D9D9D9;
+  text-decoration: none !important;
+}
+
+a:hover{
+  color: purple;
 }
