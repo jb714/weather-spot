@@ -19,7 +19,7 @@ class SavedSearches extends Component {
   render() {
     const saved = this.props.saved.map(item =>{
       console.log(item.id)
-        return <div key={item.location}>
+        return <div key={item.id}>
         <SavedItem item={item} tempUnit={this.props.tempUnit} windUnit={this.props.windUnit} onDelete={this.deleteWeather}/>
         </div>
       })

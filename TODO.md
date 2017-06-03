@@ -1,3 +1,3 @@
 Todos:
 
-Option to delete saved snapshots
+Make components responsive
