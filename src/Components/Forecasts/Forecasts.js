@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ForecastItem from "./ForecastItem";
 
-
 class Forecasts extends Component {
 
   render() {

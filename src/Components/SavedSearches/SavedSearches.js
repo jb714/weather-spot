@@ -9,13 +9,18 @@ class SavedSearches extends Component {
     super();
     this.tempUnit = <span>&#8457;</span>
     this.windUnit = "mph";
+    this.deleteWeather = this.deleteWeather.bind(this);
   }
 
+  deleteWeather(id){
+    this.props.onDelete(id);
+  }
 
   render() {
     const saved = this.props.saved.map(item =>{
+      console.log(item.id)
         return <div key={item.location}>
-        <SavedItem item={item} tempUnit={this.props.tempUnit} windUnit={this.props.windUnit}/>
+        <SavedItem item={item} tempUnit={this.props.tempUnit} windUnit={this.props.windUnit} onDelete={this.deleteWeather}/>
         </div>
       })
     return (

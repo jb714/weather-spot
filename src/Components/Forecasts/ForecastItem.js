@@ -7,8 +7,6 @@ class ForecastItem extends Component {
   render() {
     const item = this.props.item;
     const tempUnit = this.props.tempUnit;
-    console.log(item);
-
 
     return (
       <div className="rowItem">

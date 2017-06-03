@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import './App.css';
+import uuid from 'uuid';
 
 import UnitSelect from './Components/UnitSelect/UnitSelect';
 import SearchBar from './Components/SearchBar/SearchBar';
@@ -31,6 +32,7 @@ class App extends Component {
     this.setCity = this.setCity.bind(this);
     this.setScale = this.setScale.bind(this);
     this.saveWeather = this.saveWeather.bind(this);
+    this.deleteWeather = this.deleteWeather.bind(this);
   }
 
   //Set the temperature scale and the units that will be used throughout the application
@@ -49,6 +51,13 @@ class App extends Component {
     this.setState({saved: saved});
   }
 
+  deleteWeather(id){
+    let saved = this.state.saved;
+    let index = saved.findIndex(x => x.id === id);
+    saved.splice(index, 1);
+    this.setState({saved: saved});
+  }
+
 
   getWeather(){
     $.ajax({
@@ -62,9 +71,9 @@ class App extends Component {
       dataType: 'json',
       cache: false,
       success: function(data){
-        console.log("get", data.weather[0].description)
         this.setState({
           searchedWeather: {
+            id: uuid.v4(),
             location: data.name,
             currentTemp: data.main.temp,
             humidity: data.main.humidity,
@@ -105,7 +114,7 @@ class App extends Component {
     return (
       <div className="App">
         <div id="headSection">
-          <SavedSearches saved={this.state.saved} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit}/>
+          <SavedSearches saved={this.state.saved} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit} onDelete={this.deleteWeather}/>
           <SearchBar setCity={this.setCity}/>
           <UnitSelect setScale={this.setScale} scale={this.state.scale}/>
         </div>
