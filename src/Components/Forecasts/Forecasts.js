@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
+
 import ForecastItem from "./ForecastItem";
 
 class Forecasts extends Component {
@@ -23,5 +25,6 @@ class Forecasts extends Component {
     );
   }
 }
+
 
 export default Forecasts;
