@@ -30,8 +30,6 @@ class MyWeatherContainer extends Component {
     window.navigator.geolocation.getCurrentPosition(position => {
       var newLat = position.coords.latitude;
       var newLon = position.coords.longitude;
-      var accuracy =position.coords.accuracy;
-
 
     $.ajax({
       /*========Ternary conditional statements determining which type of temperature unit will be used===========*/

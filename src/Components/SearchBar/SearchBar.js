@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import storm from "../../assets/Weather-icons/storm-2.png"
+import sun from "../../assets/Weather-icons/sunny.png"
 
 
 class SearchBar extends Component {
@@ -33,7 +35,11 @@ class SearchBar extends Component {
     return (
       <div id="SearchBar" >
         <div className="wrapper" id="SearchBarWrapper">
-          <h1>The Weather Spot</h1>
+          <div id="Header">
+            <img src={storm} className="headItem" className="headImg"/>
+            <h1 className="headItem">The Weather Spot</h1>
+            <img src={sun} className="headItem" className="headImg"/>
+          </div>
           <form onSubmit={this.handleSubmit}>
           <input type="text" className="search" placeholder="Enter a city" value={this.state.value} onChange={this.handleChange}/>
           <button type="submit" className="submit">Get Weather</button>
