@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 
 class TheirWeather extends Component {
@@ -22,6 +23,13 @@ class TheirWeather extends Component {
       </div>
     );
   }
+}
+
+TheirWeather.propTypes = {
+  searchedWeather: PropTypes.object,
+  scale: PropTypes.string,
+  tempUnit: PropTypes.object,
+  windUnit: PropTypes.string,
 }
 
 export default TheirWeather;

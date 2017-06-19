@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import MyWeather from './MyWeather';
 import $ from 'jquery';
 
@@ -68,6 +70,14 @@ class MyWeatherContainer extends Component {
       </div>
     );
   }
+}
+
+MyWeatherContainer.propTypes = {
+  saved: PropTypes.array,
+  API_KEY: PropTypes.string,
+  scale: PropTypes.string,
+  tempUnit: PropTypes.object,
+  windUnit: PropTypes.string,
 }
 
 export default MyWeatherContainer;

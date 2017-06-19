@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import ForecastItem from "./ForecastItem";
 
@@ -26,5 +26,12 @@ class Forecasts extends Component {
   }
 }
 
+Forecasts.propTypes = {
+  searchedWeather: PropTypes.object,
+  forecasts: PropTypes.object,
+  scale: PropTypes.string,
+  tempUnit: PropTypes.object,
+  windUnit: PropTypes.string
+}
 
 export default Forecasts;

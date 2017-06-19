@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 
 class SaveWeather extends Component {
@@ -21,6 +22,11 @@ class SaveWeather extends Component {
       </div>
     );
   }
+}
+
+SaveWeather.propTypes = {
+  searchedWeather: PropTypes.object,
+  saveWeather: PropTypes.func
 }
 
 export default SaveWeather;

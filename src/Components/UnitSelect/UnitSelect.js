@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 
 class UnitSelect extends Component {
@@ -51,6 +52,11 @@ class UnitSelect extends Component {
       </div>
     );
   }
+}
+
+UnitSelect.propTypes = {
+  scale: PropTypes.string,
+  setScale: PropTypes.func
 }
 
 export default UnitSelect;

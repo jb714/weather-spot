@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 
 class ForecastItem extends Component {
 
@@ -17,6 +17,12 @@ class ForecastItem extends Component {
       </div>
     );
   }
+}
+
+ForecastItem.propTypes = {
+  item: PropTypes.object,
+  tempUnit: PropTypes.object,
+  windUnit: PropTypes.string,
 }
 
 export default ForecastItem;

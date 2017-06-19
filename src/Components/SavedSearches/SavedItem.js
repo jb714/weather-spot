@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 
 class SavedItem extends Component {
@@ -16,6 +17,12 @@ class SavedItem extends Component {
       </div>
     );
   }
+}
+
+SavedItem.propTypes = {
+  tempUnit: PropTypes.object,
+  windUnit: PropTypes.string,
+  onDelete: PropTypes.func
 }
 
 export default SavedItem;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 
 class MyWeather extends Component {
 
@@ -19,6 +19,12 @@ class MyWeather extends Component {
       </div>
     );
   }
+}
+
+MyWeather.propTypes = {
+  localWeather: PropTypes.object,
+  tempUnit: PropTypes.object,
+  windUnit: PropTypes.string,
 }
 
 export default MyWeather;

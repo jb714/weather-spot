@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import SavedItem from "./SavedItem";
 
@@ -32,6 +33,13 @@ class SavedSearches extends Component {
       </div>
     );
   }
+}
+
+SavedSearches.propTypes = {
+  saved: PropTypes.array,
+  tempUnit: PropTypes.object,
+  windUnit: PropTypes.string,
+  onDelete: PropTypes.func
 }
 
 export default SavedSearches;

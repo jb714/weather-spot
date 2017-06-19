@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import storm from "../../assets/Weather-icons/storm-2.png"
 import sun from "../../assets/Weather-icons/sunny.png"
 
@@ -47,6 +49,10 @@ class SearchBar extends Component {
       </div>
     );
   }
+}
+
+SearchBar.propTypes = {
+  setCity: PropTypes.func
 }
 
 export default SearchBar;
