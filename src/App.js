@@ -16,7 +16,6 @@ class App extends Component {
 
   constructor(){
     super();
-
     this.state = {
       API_KEY: 'c48579c123cab4d7e33f94e32b70aa4a',
       searchTerm: '',
