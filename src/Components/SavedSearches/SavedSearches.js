@@ -26,19 +26,12 @@ class SavedSearches extends Component {
         </div>
       })
     return (
-      <Row className="SavedSearches">
+      <Row id="SavedSearches">
         <Col xs={12}>
-          <Row>
-            <Col xs={12}>
-              <h3>Saved Snapshots</h3>
-            </Col>
-          </Row>
-
-          <Row className="SavedSearchesInner">
-            <Col xs={12}>
+          <h3>Saved Snapshots</h3>
+          <div id="SavedSearchesInner">
               <span>{saved}</span>
-            </Col>
-          </Row>
+          </div>
         </Col>
       </Row>
     );
