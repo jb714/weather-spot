@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Row, Col } from 'react-bootstrap';
 
 import SavedItem from "./SavedItem";
 
@@ -25,12 +26,21 @@ class SavedSearches extends Component {
         </div>
       })
     return (
-      <div id="SavedSearches">
-      <h3>Saved Snapshots</h3>
-        <div id="SavedSearchesInner">
-        <span>{saved}</span>
-        </div>
-      </div>
+      <Row id="SavedSearches">
+        <Col xs={12}>
+          <Row>
+            <Col xs={12}>
+              <h3>Saved Snapshots</h3>
+            </Col>
+          </Row>
+
+          <Row id="SavedSearchesInner">
+            <Col xs={12}>
+              <span>{saved}</span>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
     );
   }
 }

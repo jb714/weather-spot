@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Grid, Row, Col, Button, Form, PageHeader, FormControl, FormGroup } from 'react-bootstrap';
 
 import storm from "../../assets/Weather-icons/storm-2.png"
 import sun from "../../assets/Weather-icons/sunny.png"
@@ -34,19 +35,34 @@ class SearchBar extends Component {
   render() {
 
     return (
-      <div id="SearchBar" >
-        <div className="wrapper" id="SearchBarWrapper">
-          <div id="Header">
-            <img src={storm} alt="storm icon" className="bannerItem" className="icon"/>
-            <h1 className="bannerItem">The Weather Spot</h1>
-            <img src={sun} alt="sun icon" className="bannerItem" className="icon"/>
-          </div>
-          <form onSubmit={this.handleSubmit}>
-          <input type="text" className="search" placeholder="Enter a city" value={this.state.value} onChange={this.handleChange}/>
-          <button type="submit" className="submit">Get Weather</button>
-          </form>
-        </div>
-      </div>
+    <Row id="SearchBar">
+        <Col xs={12}>
+          <Row className="Header">
+            <Col xs={2}>
+              <img src={storm} alt="storm icon" className="icon"/>
+            </Col>
+            <Col xs={8}>
+              <PageHeader className="PageHeader">The Weather Spot</PageHeader>
+            </Col>
+            <Col xs={2}>
+              <img src={sun} alt="sun icon" className="icon"/>
+            </Col>
+          </Row>
+
+          <Row className="SearchForm" xs={12}>
+            <Col xs={12}>
+              <Form inline onSubmit={this.handleSubmit}>
+                <FormControl placeholder="Enter a city" value={this.state.value} onChange={this.handleChange} />
+                <Button type="submit" className="submit" bsStyle="primary">Get Weather</Button>
+                </Form>
+            </Col>
+          </Row>
+
+        </Col>
+      </Row>
+
+
+
     );
   }
 }
