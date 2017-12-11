@@ -26,7 +26,7 @@ class SavedSearches extends Component {
         </div>
       })
     return (
-      <Row id="SavedSearches">
+      <Row className="SavedSearches">
         <Col xs={12}>
           <Row>
             <Col xs={12}>
@@ -34,7 +34,7 @@ class SavedSearches extends Component {
             </Col>
           </Row>
 
-          <Row id="SavedSearchesInner">
+          <Row className="SavedSearchesInner">
             <Col xs={12}>
               <span>{saved}</span>
             </Col>

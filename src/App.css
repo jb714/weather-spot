@@ -22,6 +22,7 @@ hr{
   text-align: center;
   background-color: #00AAFF;
   color: white;
+  height: 250px;
 }
 
 /*UnitSelect and subcomponents styling*/
@@ -58,11 +59,11 @@ hr{
   height: 35px;
 }
 
-#SavedSearches{
+.SavedSearches{
   text-align: left;
 }
 
-#SavedSearchesInner{
+.SavedSearchesInner{
   overflow-y: auto;
   direction: rtl;
 }
