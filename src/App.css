@@ -1,5 +1,7 @@
 .App {
   font-family: arial;
+  height: 100vh;
+  width: 100%;
 }
 
 /*General components to be used throughout*/
@@ -19,6 +21,7 @@ hr{
 }*/
 
 .headSection{
+  padding-bottom: 50px;
   text-align: center;
   background-color: #00AAFF;
   color: white;
@@ -26,7 +29,6 @@ hr{
 
 /*UnitSelect and subcomponents styling*/
 #UnitSelect{
-  text-align: right;
   padding: 30px 20px 0px 0px;
 }
 
@@ -46,6 +48,14 @@ hr{
   width: 45px;
   margin-top: 50%;
 }
+
+#stormIcon{
+  float: right;
+}
+#sunIcon{
+  float: left;
+}
+
 .search{
   vertical-align: middle;
   width: 220px;
@@ -76,58 +86,47 @@ hr{
 /*****************++++++++++++++++++++++Body Section++++++++++++++++++++++*****************/
 
   .bodySection{
+    padding: 50px 0px;
     border: 1px solid #FFFFFF;
     background-color: #5ad9f9;
-    height: 350px;
     text-align: center;
-    clear: both;
   }
 
-  .swoop{
-    /*border: 1px solid orange;*/
+  .weatherBlock{
+    width: 100%;
+    height: auto;
+    background-color: #FFFFFF;
+    padding: 15px;
+    border: 2px solid #D9D9D9;;
+    border-radius: 5px;
   }
+
+  /*MyWeather and subcomponents styling*/
+  #MyWeather{
+    text-align: left;
+    width: 100%;
+    /* height: 280px; */
+  }
+
 /*TheirWeather and subcomponents styling*/
 #TheirWeather{
-  clear: both;
-  width: 30%;
-  height: 280px;
+  margin-bottom: 30px;
+  width: 100%;
+  /* height: 280px; */
   text-align: center;
-  display: inline-block;
-  background-color: white;
-  box-shadow: 2px 2px 2px 2px #191B1A;
 }
-
 
 /*Forecasts and subcomponents styling*/
 #Forecasts{
-  width: 30%;
-  height: 350px;
-  margin-right: 10px;
-  float: right;
-  display: inline-block;
-  text-align: center;
-  background-color: white;
-  box-shadow: 2px 2px 2px 2px #191B1A;
+  /* height: 280px; */
 
+  text-align: center;
 }
 #ForecastsWrapper{
-  height: 200px;
+  /* height: 200px; */
   overflow-y: auto;
 }
 
-/*MyWeather and subcomponents styling*/
-#MyWeather{
-  text-align: left;
-  margin-left: 10px;
-  padding-left: 10px;
-  width: 30%;
-  height: 280px;
-  float: left;
-  display: inline-block;
-  background-color: white;
-  box-shadow: 2px 2px 2px 2px #191B1A;
-
-}
 
 .rowItem{
   font-size: 12px;
@@ -143,30 +142,31 @@ hr{
   text-align: left;
 }
 
-#base{
-  padding-top: 20px;
-  clear: both;
-}
 
 
 
 .footerSection{
+  height: 110px;
+  padding-top: 20px;
   background-color: #00AAFF;
-  /*height: 300px;*/
-  clear: both;
+}
+
+.align-right{
+  text-align: right;
+}
+
+.align-left{
+  text-align: left;
 }
 
 #attribution{
   padding-left: 10px;
   color: white;
-  display: inline-block;
-  float: left;
 }
 #githubLink{
   padding-right: 10px;
   color: white;
   display: inline-block;
-  float: right;
 }
 
 a{

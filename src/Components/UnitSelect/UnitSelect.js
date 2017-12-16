@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { FormControl } from 'react-bootstrap';
+
 
 class UnitSelect extends Component {
 
@@ -41,13 +43,13 @@ class UnitSelect extends Component {
       <div id="UnitSelect" >
         <div className="wrapper" id="UnitSelectWrapper">
             <label>
-            Temperature Unit: &ensp;
+            Temperature Unit
             </label>
-            <select value={this.state.value} onChange={this.handleChange}>
-            <option value="Fahrenheit" >Fahrenheit (&#8457;)</option>
-            <option value="Metric" >Metric (&deg;C)</option>
-            <option value="Kelvin">Kelvin (K)</option>
-            </select>
+            <FormControl componentClass="select" value={this.state.value} onChange={this.handleChange}>
+              <option value="Fahrenheit" >Fahrenheit (&#8457;)</option>
+              <option value="Metric" >Metric (&deg;C)</option>
+              <option value="Kelvin">Kelvin (K)</option>
+            </FormControl>
           </div>
       </div>
     );

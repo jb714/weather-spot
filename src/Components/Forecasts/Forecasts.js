@@ -16,7 +16,7 @@ class Forecasts extends Component {
     }
 
     return (
-      <div id="Forecasts">
+      <div id="Forecasts" className="weatherBlock">
       <h2 className="cardHead">7 day forecast in {this.props.searchedWeather.location}:</h2>
         <div id="ForecastsWrapper">
         {forecasts}

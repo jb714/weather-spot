@@ -38,13 +38,13 @@ class SearchBar extends Component {
     <Row id="SearchBar">
         <Col xs={12}>
           <Row className="Header">
-            <Col xs={2}>
+            <Col xs={2} className="align-right">
               <img src={storm} alt="storm icon" className="icon"/>
             </Col>
             <Col xs={8}>
               <PageHeader className="PageHeader">The Weather Spot</PageHeader>
             </Col>
-            <Col xs={2}>
+            <Col xs={2} className="align-left">
               <img src={sun} alt="sun icon" className="icon"/>
             </Col>
           </Row>

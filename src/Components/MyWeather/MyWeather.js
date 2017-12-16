@@ -8,7 +8,7 @@ class MyWeather extends Component {
 
     return (
 
-      <div id="MyWeather">
+      <div id="MyWeather" className="weatherBlock">
         <div id="MyWeatherWrapper">
         <h2 className="cardHead"> Here, in {localWeather.location}</h2>
         <h3> Temperature right now : {localWeather.currentTemp} {this.props.tempUnit}</h3>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
 
 
 class SaveWeather extends Component {
@@ -17,7 +18,7 @@ class SaveWeather extends Component {
       return(
       <div id="SaveWeather">
         <div id="SaveWeather">
-          <input type="submit" onClick={this.saveWeather} value="Save"/>
+          <Button bsStyle="primary" type="submit" onClick={this.saveWeather} value="Save">Save</Button>
         </div>
       </div>
     );

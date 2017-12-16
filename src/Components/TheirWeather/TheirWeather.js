@@ -10,7 +10,7 @@ class TheirWeather extends Component {
     const searchedWeather = this.props.searchedWeather;
 
     return (
-      <div id="TheirWeather">
+      <div id="TheirWeather" className="weatherBlock">
         <div id="TheirWeatherInner">
           <div className="cardHead">
             <h2> Over there, in {searchedWeather.location}</h2>
