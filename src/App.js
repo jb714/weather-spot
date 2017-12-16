@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
 import $ from 'jquery';
 import './App.css';
 import uuid from 'uuid';
@@ -112,44 +111,29 @@ class App extends Component {
 
   render() {
     return (
+      <div className="App">
 
-        <Grid className="App">
+        <div id="headSection">
+          <SavedSearches saved={this.state.saved} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit} onDelete={this.deleteWeather}/>
+          <SearchBar setCity={this.setCity}/>
+          <UnitSelect setScale={this.setScale} scale={this.state.scale}/>
+        </div>
 
-          <Row className="headSection">
-            <Col xs={3}>
-                <SavedSearches saved={this.state.saved} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit} onDelete={this.deleteWeather}/>
-            </Col>
-            <Col xs={6}>
-                <SearchBar setCity={this.setCity}/>
-            </Col>
-            <Col xs={3}>
-                <UnitSelect setScale={this.setScale} scale={this.state.scale}/>
-            </Col>
-          </Row>
+        <div id="bodySection">
+        <MyWeatherContainer API_KEY={this.state.API_KEY} scale={this.state.scale} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit}/>
+          {this.state.searchTerm ? <TheirWeather searchedWeather={this.state.searchedWeather} scale={this.state.scale} tempUnit={this.state.tempUnit}
+          windUnit={this.state.windUnit}/>
+            : <h3 id="whiteText">Enter a city to get started</h3>}
 
-          <Row className="bodySection">
-            <Col xs={12}>
-              <MyWeatherContainer API_KEY={this.state.API_KEY} scale={this.state.scale} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit}/>
-                {this.state.searchTerm ? <TheirWeather searchedWeather={this.state.searchedWeather} scale={this.state.scale} tempUnit={this.state.tempUnit}
-                windUnit={this.state.windUnit}/>
-                  : <h3 id="whiteText">Enter a city to get started</h3>}
-
-                {this.state.searchTerm ? <Forecasts forecasts={this.state.forecasts} scale={this.state.scale}
-                tempUnit={this.state.tempUnit} windUnit={this.state.windUnit} searchedWeather={this.state.searchedWeather}/>: ''}
-                <div id="base">
-                {this.state.searchTerm ? <SaveWeather saveWeather={this.saveWeather} searchedWeather={this.state.searchedWeather}  /> : '' }
-                </div>
-              </Col>
-          </Row>
-
-          <Row className="footerSection">
-            <Col xs={12}>
-              <Footer />
-            </Col>
-          </Row>
-
-        </Grid>
-
+          {this.state.searchTerm ? <Forecasts forecasts={this.state.forecasts} scale={this.state.scale}
+          tempUnit={this.state.tempUnit} windUnit={this.state.windUnit} searchedWeather={this.state.searchedWeather}/>: ''}
+          <div id="base">
+          {this.state.searchTerm ? <SaveWeather saveWeather={this.saveWeather} searchedWeather={this.state.searchedWeather}  /> : '' }
+          </div>
+        </div>
+        <Footer />
+        
+      </div>
     );
   }
 }
