@@ -1,3 +1,13 @@
+
+/*Overwrite medium stylings*/
+@media (max-width: 991px) {
+
+  .icon{
+    margin: 0px ;
+  }
+
+}
+
 .App {
   font-family: arial;
   height: 100vh;
@@ -11,15 +21,6 @@ hr{
 
 /*****************++++++++++++++++++++++Head Section++++++++++++++++++++++*****************/
 /*headSection and subcomponents styling*/
-/*#headSection{
-  text-align: center;
-  height: 100%;
-  width: 100%;
-  height: 200px;
-  background-color: #00AAFF;
-  color: white;
-}*/
-
 .headSection{
   padding-bottom: 50px;
   text-align: center;
@@ -69,10 +70,6 @@ hr{
   font-size: 20px;
 }
 
-.submit{
-  vertical-align: middle;
-  height: 35px;
-}
 
 #SavedSearches{
   text-align: left;
@@ -113,7 +110,6 @@ hr{
 
   /*MyWeather and subcomponents styling*/
   #MyWeather{
-    text-align: left;
     width: 100%;
     /* height: 280px; */
   }

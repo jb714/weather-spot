@@ -49,7 +49,7 @@ class SearchBar extends Component {
             </Col>
           </Row>
 
-          <Row className="SearchForm" xs={12}>
+          <Row className="SearchForm" >
             <Col xs={12}>
               <Form inline onSubmit={this.handleSubmit}>
                 <FormControl placeholder="Enter a city" value={this.state.value} onChange={this.handleChange} />
