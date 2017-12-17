@@ -116,13 +116,13 @@ class App extends Component {
       <Grid className="App">
 
         <Row className="headSection">
-          <Col xs={3}>
+          <Col xs={6} sm={3}>
             <SavedSearches saved={this.state.saved} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit} onDelete={this.deleteWeather}/>
           </Col>
-          <Col xs={6}>
+          <Col xs={12} sm={6}>
             <SearchBar setCity={this.setCity}/>
           </Col>
-          <Col xs={3}>
+          <Col xs={6} sm={3}>
             <UnitSelect setScale={this.setScale} scale={this.state.scale}/>
           </Col>
         </Row>
@@ -135,7 +135,7 @@ class App extends Component {
             {this.state.searchTerm ? <TheirWeather searchedWeather={this.state.searchedWeather} scale={this.state.scale} tempUnit={this.state.tempUnit}
             windUnit={this.state.windUnit}/>
             : <h3 id="whiteText">Enter a city to get started</h3>}
-            
+
             {this.state.searchTerm ? <SaveWeather saveWeather={this.saveWeather} searchedWeather={this.state.searchedWeather}  /> : '' }
           </Col>
           <Col xs={4}>
