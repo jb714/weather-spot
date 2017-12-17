@@ -41,16 +41,12 @@ class UnitSelect extends Component {
 
     return (
       <div id="UnitSelect" >
-        <div className="wrapper" id="UnitSelectWrapper">
-            <label>
-            Temperature Unit
-            </label>
-            <FormControl componentClass="select" value={this.state.value} onChange={this.handleChange}>
+            <h4>Temperature Unit</h4>
+            <FormControl className="UnitDropdown" componentClass="select" value={this.state.value} onChange={this.handleChange}>
               <option value="Fahrenheit" >Fahrenheit (&#8457;)</option>
               <option value="Metric" >Metric (&deg;C)</option>
               <option value="Kelvin">Kelvin (K)</option>
             </FormControl>
-          </div>
       </div>
     );
   }

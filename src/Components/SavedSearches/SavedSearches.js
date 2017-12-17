@@ -26,7 +26,7 @@ class SavedSearches extends Component {
       })
     return (
       <div id="SavedSearches">
-      <h3>Saved Snapshots</h3>
+      <h4>Saved Snapshots</h4>
         <div id="SavedSearchesInner">
         <span>{saved}</span>
         </div>
