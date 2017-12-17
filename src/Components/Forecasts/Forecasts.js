@@ -17,7 +17,7 @@ class Forecasts extends Component {
 
     return (
       <div id="Forecasts" className="weatherBlock">
-      <h2 className="cardHead">7 day forecast in {this.props.searchedWeather.location}:</h2>
+      <p className="cardHead">7 day forecast in <span className="altColor">{this.props.searchedWeather.location}:</span></p>
         <div id="ForecastsWrapper">
         {forecasts}
         </div>

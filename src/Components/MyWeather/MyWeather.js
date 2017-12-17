@@ -11,11 +11,11 @@ class MyWeather extends Component {
 
       <Row id="MyWeather" className="weatherBlock">
         <Col xs={12} id="MyWeatherWrapper">
-        <h2 className="cardHead"> Here, in {localWeather.location}</h2>
-        <h3> Temperature right now : {localWeather.currentTemp} {this.props.tempUnit}</h3>
-        <h3> Humidity: {localWeather.humidity} </h3>
-        <h3> Current weather conditions: {localWeather.conditions}</h3>
-        <h3>Wind speed: {localWeather.windSpeed} {this.props.windUnit}</h3>
+        <p className="cardHead"> Here, in <span className="altColor">{localWeather.location}</span></p>
+        <p> Temperature right now : <span className="altColor"> {localWeather.currentTemp} {this.props.tempUnit}</span></p>
+        <p> Humidity: <span className="altColor">{localWeather.humidity}</span> </p>
+        <p> Current weather conditions: <span className="altColor">{localWeather.conditions}</span></p>
+        <p>Wind speed: <span className="altColor">{localWeather.windSpeed} {this.props.windUnit}</span></p>
         </Col>
       </Row>
     );

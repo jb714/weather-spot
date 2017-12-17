@@ -10,9 +10,9 @@ class ForecastItem extends Component {
 
     return (
       <div className="rowItem">
-        <span>Avg. Temp: {item.temp.day} {tempUnit}, </span>
-        <span>Humidity: {item.humidity}, </span>
-        <span>Forecast: {item.weather[0].main}</span>
+        <span>Avg. Temp: <span className="altColor">{item.temp.day} {tempUnit}</span>, </span>
+        <span>Humidity: <span className="altColor">{item.humidity}</span>, </span>
+        <span>Forecast: <span className="altColor">{item.weather[0].main}</span></span>
         <hr />
       </div>
     );

@@ -87,7 +87,10 @@ hr{
   color: white;
 }
 
-
+.altColor{
+  color: purple;
+  font-weight: bold;
+}
 
 /*****************++++++++++++++++++++++Body Section++++++++++++++++++++++*****************/
 
@@ -100,7 +103,8 @@ hr{
 
   .weatherBlock{
     width: 100%;
-    height: auto;
+    height: 190px;
+    overflow-y: auto;
     background-color: #FFFFFF;
     padding: 15px;
     border: 2px solid #D9D9D9;;
@@ -148,7 +152,7 @@ hr{
 
 
 .footerSection{
-  height: 110px;
+  height: 140px;
   padding-top: 20px;
   background-color: #00AAFF;
 }

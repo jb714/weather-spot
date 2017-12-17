@@ -14,12 +14,12 @@ class TheirWeather extends Component {
       <Row id="TheirWeather" className="weatherBlock">
         <Col xs={12} id="TheirWeatherInner">
           <div className="cardHead">
-            <h2> Over there, in {searchedWeather.location}</h2>
+            <p> Over there, in <span className="altColor">{searchedWeather.location}</span></p>
           </div>
-          <h3>Temperature right now : {searchedWeather.currentTemp} {this.props.tempUnit}</h3>
-          <h3> Humidity: {searchedWeather.humidity} </h3>
-          <h3> Current weather conditions: {searchedWeather.conditions}</h3>
-          <h3>Wind speed: {searchedWeather.windSpeed} {this.props.windUnit}</h3>
+          <p>Temperature right now : <span className="altColor">{searchedWeather.currentTemp} {this.props.tempUnit}</span></p>
+          <p> Humidity: <span className="altColor">{searchedWeather.humidity}</span> </p>
+          <p> Current weather conditions: <span className="altColor">{searchedWeather.conditions}</span></p>
+          <p>Wind speed: <span className="altColor">{searchedWeather.windSpeed} {this.props.windUnit}</span></p>
         </Col>
       </Row>
     );
