@@ -11,15 +11,15 @@ class TheirWeather extends Component {
     const searchedWeather = this.props.searchedWeather;
 
     return (
-      <Row id="TheirWeather" className="weatherBlock">
-        <Col xs={12} id="TheirWeatherInner">
-          <div className="cardHead">
-            <p> Over there, in <span className="altColor">{searchedWeather.location}</span></p>
+      <Row id="TheirWeather">
+        <Col xs={12}>
+          <div className="weatherBlock">
+            <p className="cardHead"> Over there, in <span className="altColor">{searchedWeather.location}</span></p>
+            <p>Temperature right now : <span className="altColor">{searchedWeather.currentTemp} {this.props.tempUnit}</span></p>
+            <p> Humidity: <span className="altColor">{searchedWeather.humidity}</span> </p>
+            <p> Current weather conditions: <span className="altColor">{searchedWeather.conditions}</span></p>
+            <p>Wind speed: <span className="altColor">{searchedWeather.windSpeed} {this.props.windUnit}</span></p>
           </div>
-          <p>Temperature right now : <span className="altColor">{searchedWeather.currentTemp} {this.props.tempUnit}</span></p>
-          <p> Humidity: <span className="altColor">{searchedWeather.humidity}</span> </p>
-          <p> Current weather conditions: <span className="altColor">{searchedWeather.conditions}</span></p>
-          <p>Wind speed: <span className="altColor">{searchedWeather.windSpeed} {this.props.windUnit}</span></p>
         </Col>
       </Row>
     );

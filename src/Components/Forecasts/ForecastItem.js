@@ -9,7 +9,7 @@ class ForecastItem extends Component {
     const tempUnit = this.props.tempUnit;
 
     return (
-      <div className="rowItem">
+      <div>
         <span>Avg. Temp: <span className="altColor">{item.temp.day} {tempUnit}</span>, </span>
         <span>Humidity: <span className="altColor">{item.humidity}</span>, </span>
         <span>Forecast: <span className="altColor">{item.weather[0].main}</span></span>

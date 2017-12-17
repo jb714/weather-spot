@@ -9,13 +9,15 @@ class MyWeather extends Component {
 
     return (
 
-      <Row id="MyWeather" className="weatherBlock">
-        <Col xs={12} id="MyWeatherWrapper">
-        <p className="cardHead"> Here, in <span className="altColor">{localWeather.location}</span></p>
-        <p> Temperature right now : <span className="altColor"> {localWeather.currentTemp} {this.props.tempUnit}</span></p>
-        <p> Humidity: <span className="altColor">{localWeather.humidity}</span> </p>
-        <p> Current weather conditions: <span className="altColor">{localWeather.conditions}</span></p>
-        <p>Wind speed: <span className="altColor">{localWeather.windSpeed} {this.props.windUnit}</span></p>
+      <Row id="MyWeather">
+        <Col xs={12}>
+          <div className="weatherBlock">
+            <p className="cardHead"> Here, in <span className="altColor">{localWeather.location}</span></p>
+            <p> Temperature right now : <span className="altColor"> {localWeather.currentTemp} {this.props.tempUnit}</span></p>
+            <p> Humidity: <span className="altColor">{localWeather.humidity}</span> </p>
+            <p> Current weather conditions: <span className="altColor">{localWeather.conditions}</span></p>
+            <p>Wind speed: <span className="altColor">{localWeather.windSpeed} {this.props.windUnit}</span></p>
+          </div>
         </Col>
       </Row>
     );

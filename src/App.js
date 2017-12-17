@@ -135,19 +135,23 @@ class App extends Component {
         </Row>
 
         <Row className="bodySection">
-          <Col xs={4}>
+          <Col xs={12} sm={4}>
             <MyWeatherContainer API_KEY={this.state.API_KEY} scale={this.state.scale} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit}/>
           </Col>
-          <Col xs={4}>
+          <Col xs={12} sm={4}>
             {this.state.searchTerm ? <TheirWeather searchedWeather={this.state.searchedWeather} scale={this.state.scale} tempUnit={this.state.tempUnit}
             windUnit={this.state.windUnit}/>
             : <h3 id="whiteText">Enter a city to get started</h3>}
-
-            {this.state.searchTerm ? <SaveWeather saveWeather={this.saveWeather} searchedWeather={this.state.searchedWeather}  /> : '' }
           </Col>
-          <Col xs={4}>
+          <Col xs={12} sm={4}>
           {this.state.searchTerm ? <Forecasts forecasts={this.state.forecasts} scale={this.state.scale}
           tempUnit={this.state.tempUnit} windUnit={this.state.windUnit} searchedWeather={this.state.searchedWeather}/>: ''}
+          </Col>
+        </Row>
+
+        <Row className="saveSection">
+          <Col xsHidden>
+          {this.state.searchTerm ?  <SaveWeather saveWeather={this.saveWeather} searchedWeather={this.state.searchedWeather}  /> : '' }
           </Col>
         </Row>
 
