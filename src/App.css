@@ -125,8 +125,6 @@ hr{
 /*Forecasts and subcomponents styling*/
 #Forecasts{
   /* height: 280px; */
-
-  /* text-align: center; */
 }
 #ForecastsWrapper{
   /* height: 200px; */
@@ -147,8 +145,6 @@ hr{
   display: inline-block;
   text-align: left;
 }
-
-
 
 
 .footerSection{
