@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { Grid, Row, Col, FormControl } from 'react-bootstrap';
+import { Row, Col, FormControl } from 'react-bootstrap';
 
 
 class UnitSelect extends Component {

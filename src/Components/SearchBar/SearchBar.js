@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Row, Col, Button, Form, PageHeader, FormControl, FormGroup } from 'react-bootstrap';
+import { Row, Col, Button, Form, PageHeader, FormControl, FormGroup } from 'react-bootstrap';
 
 import storm from "../../assets/Weather-icons/storm-2.png"
 import sun from "../../assets/Weather-icons/sunny.png"

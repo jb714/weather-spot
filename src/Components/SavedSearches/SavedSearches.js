@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Row, Col, FormControl, Button, Modal } from 'react-bootstrap';
+import { Row, Col, Modal } from 'react-bootstrap';
 import hamburgerIcon from "../../assets/ic_menu_white_24px.svg"
 
 import SavedItem from "./SavedItem";
@@ -55,7 +55,7 @@ class SavedSearches extends Component {
 
             <Col smHidden mdHidden lgHidden>
 
-              <img src={hamburgerIcon} className="hamburgerIcon" onClick={this.openModal} />
+              <img src={hamburgerIcon} className="hamburgerIcon" onClick={this.openModal} alt="Hamburger icon"/>
 
 
               <Modal show={this.state.showModal} onHide={this.closeModal}>
