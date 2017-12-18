@@ -30,6 +30,10 @@ hr{
   color: white;
 }
 
+.hamburgerIcon{
+  width: 50px;
+  padding-top: 3px;
+}
 img:hover{
   color: #D9D9D9;
 }

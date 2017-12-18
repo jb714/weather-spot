@@ -52,9 +52,11 @@ class SearchBar extends Component {
           <Row className="SearchForm" >
             <Col xs={12}>
               <Form inline onSubmit={this.handleSubmit}>
-                  <FormControl placeholder="Enter a city" value={this.state.value} onChange={this.handleChange} />
+                  <FormGroup>
+                    <FormControl placeholder="Enter a city" value={this.state.value} onChange={this.handleChange} />
+                  </FormGroup>
                   <Button type="submit" className="submit" bsStyle="primary">Get Weather</Button>
-                </Form>
+              </Form>
             </Col>
           </Row>
 
