@@ -13,7 +13,7 @@ class SavedItem extends Component {
     return (
 
       <div className="SavedSearches">
-        <p>Right now, {item.location} is experiencing {item.description} <a href="#" onClick={this.deleteWeather.bind(this, this.props.item.id)}>X</a></p>
+        <p>{item.location} is experiencing {item.description} <a href="#" onClick={this.deleteWeather.bind(this, this.props.item.id)}>X</a></p>
       </div>
     );
   }

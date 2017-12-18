@@ -2,6 +2,9 @@
 /*Overwrite medium stylings*/
 @media(max-width: 992px) {
 
+  .weatherBlock{
+    padding: 50px;
+  }
 
 }
 
@@ -27,6 +30,9 @@ hr{
   color: white;
 }
 
+img:hover{
+  color: #D9D9D9;
+}
 /*UnitSelect and subcomponents styling*/
 
 #UnitSelect{
@@ -151,15 +157,10 @@ hr{
   text-align: left;
 }
 
-#attribution{
-  padding-left: 10px;
+.attribution{
   color: white;
 }
-#githubLink{
-  padding-right: 10px;
-  color: white;
-  display: inline-block;
-}
+
 
 a{
   color: #D9D9D9;

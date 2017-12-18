@@ -151,7 +151,7 @@ class App extends Component {
         </Row>
 
         <Row className="saveSection">
-          <Col xsHidden>
+          <Col xs={12}>
           {this.state.searchTerm ?  <SaveWeather saveWeather={this.saveWeather} searchedWeather={this.state.searchedWeather}  /> : '' }
           </Col>
         </Row>
