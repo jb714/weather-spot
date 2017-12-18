@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 import MyWeather from './MyWeather';
 import $ from 'jquery';
@@ -64,10 +65,11 @@ class MyWeatherContainer extends Component {
   render() {
 
     return (
-
-      <div>
-        <MyWeather localWeather={this.state.localWeather} tempUnit={this.props.tempUnit} windUnit={this.props.windUnit}/>
-      </div>
+      <Row>
+        <Col xs={12}>
+          <MyWeather localWeather={this.state.localWeather} tempUnit={this.props.tempUnit} windUnit={this.props.windUnit}/>
+        </Col>
+      </Row>
     );
   }
 }

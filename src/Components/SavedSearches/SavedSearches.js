@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Grid, Row, Col, FormControl } from 'react-bootstrap';
 
 import SavedItem from "./SavedItem";
 
@@ -25,12 +26,26 @@ class SavedSearches extends Component {
         </div>
       })
     return (
-      <div id="SavedSearches">
-      <h4>Saved Snapshots</h4>
-        <div id="SavedSearchesInner">
-        <span>{saved}</span>
-        </div>
-      </div>
+      <Row id="SavedSearches">
+        <Col xs={12}>
+
+          <Row>
+
+            <Col xsHidden>
+            <h4>Saved Snapshots</h4>
+            <span>{saved}</span>
+            </Col>
+
+            <Col smHidden mdHidden lgHidden>
+            <h4><a>Modal coming soon</a></h4>
+
+            </Col>
+
+          </Row>
+
+        </Col>
+
+      </Row>
     );
   }
 }

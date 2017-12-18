@@ -30,12 +30,12 @@ hr{
 /*UnitSelect and subcomponents styling*/
 
 #UnitSelect{
+  margin: auto 0;
   text-align: center;
 }
 
 .UnitDropdown{
-  width: 150px;
-  margin: 0 auto;
+  text-align: center;
 }
 
 /*SearhBar and subcomponents styling*/
@@ -71,6 +71,7 @@ hr{
 
 
 #SavedSearches{
+  margin: auto 0;
   text-align: left;
 }
 

@@ -116,11 +116,12 @@ class App extends Component {
       <Grid className="App">
 
         <Row className="headSection">
-          <Col xsHidden sm={3}>
+
+          <Col xs={6} sm={3}>
             <SavedSearches saved={this.state.saved} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit} onDelete={this.deleteWeather}/>
           </Col>
 
-          <Col xsOffset={8} smHidden mdHidden lgHidden>
+          <Col xs={6} smHidden mdHidden lgHidden>
             <UnitSelect setScale={this.setScale} scale={this.state.scale}/>
           </Col>
 

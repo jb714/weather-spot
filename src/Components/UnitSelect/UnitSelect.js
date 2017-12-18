@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { FormControl } from 'react-bootstrap';
+import { Grid, Row, Col, FormControl } from 'react-bootstrap';
 
 
 class UnitSelect extends Component {
@@ -40,14 +40,24 @@ class UnitSelect extends Component {
   render() {
 
     return (
-      <div id="UnitSelect" >
-            <h4>Temperature Unit</h4>
-            <FormControl className="UnitDropdown" componentClass="select" value={this.state.value} onChange={this.handleChange}>
+      <Row id="UnitSelect" >
+        <Col xs={12}>
+          <Row>
+            <Col xs={12}>
+              <h4>Temp Units</h4>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <FormControl className="UnitDropdown" componentClass="select" value={this.state.value} onChange={this.handleChange}>
               <option value="Fahrenheit" >Fahrenheit (&#8457;)</option>
               <option value="Metric" >Metric (&deg;C)</option>
               <option value="Kelvin">Kelvin (K)</option>
-            </FormControl>
-      </div>
+              </FormControl>
+              </Col>
+          </Row>
+        </Col>
+      </Row>
     );
   }
 }
