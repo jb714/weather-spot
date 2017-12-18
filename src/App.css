@@ -27,7 +27,6 @@ hr{
 /*UnitSelect and subcomponents styling*/
 
 #UnitSelect{
-  margin: auto 0;
   text-align: center;
 }
 
@@ -80,10 +79,9 @@ hr{
 .hamburgerIcon{
   width: 50px;
   padding-top: 3px;
-  cursor:pointer;
 }
 
-#whiteText{
+.whiteText{
   color: white;
 }
 
@@ -134,7 +132,8 @@ hr{
 
 
 .footerSection{
-  height: 140px;
+  padding-top: 30px;
+  height: 200px;
   background-color: #00AAFF;
 }
 

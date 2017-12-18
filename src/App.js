@@ -142,7 +142,7 @@ class App extends Component {
           <Col xs={12} sm={4}>
             {this.state.searchTerm ? <TheirWeather searchedWeather={this.state.searchedWeather} scale={this.state.scale} tempUnit={this.state.tempUnit}
             windUnit={this.state.windUnit}/>
-            : <h3 id="whiteText">Enter a city to get started</h3>}
+            : <h3 className="whiteText">Enter a city to get started</h3>}
           </Col>
           <Col xs={12} sm={4}>
           {this.state.searchTerm ? <Forecasts forecasts={this.state.forecasts} scale={this.state.scale}
