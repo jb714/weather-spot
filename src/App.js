@@ -27,7 +27,6 @@ class App extends Component {
       scale: "Fahrenheit",
       tempUnit: <span>&#8457;</span>,
       windUnit: "mph",
-
     }
     this.getWeather = this.getWeather.bind(this);
     this.setCity = this.setCity.bind(this);

@@ -39,7 +39,7 @@ class SearchBar extends Component {
         <Col xs={12}>
           <Row className="Header">
             <Col xs={2} className="align-right">
-              <img src={storm} alt="storm icon" className="icon"/>
+              <img src={storm} alt="storm icon" className="icon" responsive/>
             </Col>
             <Col xs={8}>
               <PageHeader className="PageHeader">The Weather Spot</PageHeader>
