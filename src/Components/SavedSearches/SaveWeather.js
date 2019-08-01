@@ -17,9 +17,7 @@ class SaveWeather extends Component {
   render() {
       return(
       <div id="SaveWeather">
-        <div id="SaveWeather">
           <Button bsStyle="primary" type="submit" onClick={this.saveWeather} value="Save">Save snapshot</Button>
-        </div>
       </div>
     );
   }

@@ -10,13 +10,13 @@
 }
 
 /*General components to be used throughout*/
-hr{
+hr {
   width: 40px;
 }
 
 /*****************++++++++++++++++++++++Head Section++++++++++++++++++++++*****************/
 /*headSection and subcomponents styling*/
-.headSection{
+.head-section {
   padding-bottom: 50px;
   text-align: center;
   background-color: #00AAFF;
@@ -26,39 +26,31 @@ hr{
 
 /*UnitSelect and subcomponents styling*/
 
-#UnitSelect{
+.unit-select {
   text-align: center;
 }
 
-.UnitDropdown{
+.unit-dropdown {
   text-align: center;
 }
 
 /*SearhBar and subcomponents styling*/
-#SearchBar{
+.searchbar {
   text-align: center;
   vertical-align: middle;
 }
 
-.PageHeader{
+.PageHeader {
   text-decoration: none;
   border: none;
 }
 
-.icon{
+.icon {
   text-align: center;
   width: 45px;
-  margin-top: 50%;
 }
 
-#stormIcon{
-  float: right;
-}
-#sunIcon{
-  float: left;
-}
-
-.search{
+.search {
   vertical-align: middle;
   width: 220px;
   height: 30px;
@@ -66,30 +58,30 @@ hr{
 }
 
 
-#SavedSearches{
+#SavedSearches {
   margin: auto 0;
   text-align: left;
 }
 
-#SavedSearchesInner{
+#SavedSearchesInner {
   overflow-y: auto;
   direction: rtl;
 }
 
-.hamburgerIcon{
+.hamburgerIcon {
   margin: auto 0;
   width: 50px;
   padding-top: 3px;
 }
 
-.whiteText{
+.whiteText {
   color: white;
 }
 
 
 /*****************++++++++++++++++++++++Body Section++++++++++++++++++++++*****************/
 
-  .bodySection{
+  .bodySection {
     padding: 50px 0px 0px 0px;
     border: 1px solid #FFFFFF;
     border-bottom: 0px;
@@ -97,7 +89,7 @@ hr{
     text-align: center;
   }
 
-  .weatherBlock{
+  .weatherBlock {
     margin: auto 0;
     margin-bottom: 10px;
     height: 180px;
@@ -109,22 +101,22 @@ hr{
   }
 
 
-.forecastItem{
+.forecastItem {
   font-size: 12px;
   text-align: center;
 }
 /*SaveWeather and subcomponents styling*/
 
-#SaveWeather{
+#SaveWeather {
   text-align: center;
 }
 
-#SaveWeatherInner{
+#SaveWeatherInner {
   display: inline-block;
   text-align: left;
 }
 
-.saveSection{
+.saveSection {
   background-color: #5ad9f9;
   padding: 5px 0px 50px 0px;
   border: 1px solid #FFFFFF;
@@ -132,21 +124,21 @@ hr{
 }
 
 
-.footerSection{
+.footerSection {
   padding-top: 40px;
   height: 200px;
   background-color: #00AAFF;
 }
 
-.align-right{
+.align-right {
   text-align: right;
 }
 
-.align-left{
+.align-left {
   text-align: left;
 }
 
-.attribution{
+.attribution {
   color: white;
 }
 
@@ -155,11 +147,11 @@ hr{
   font-weight: bold;
 }
 
-a{
+a {
   color: #D9D9D9;
   text-decoration: none !important;
 }
 
-a:hover{
+a:hover {
   color: purple;
 }

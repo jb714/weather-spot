@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import hamburgerIcon from "../../assets/ic_menu_white_24px.svg"
 
 import SavedItem from "./SavedItem";
@@ -43,21 +43,15 @@ class SavedSearches extends Component {
         </div>
       })
     return (
-      <Row id="SavedSearches">
-        <Col xs={12}>
-
-          <Row>
-
-            <Col xsHidden>
+      <div id="SavedSearches">
+        <div>
+          <div>
+            <div xsHidden>
             <h4>Saved Snapshots</h4>
             <span>{saved}</span>
-            </Col>
-
-            <Col smHidden mdHidden lgHidden>
-
+            </div>
+            <div smHidden mdHidden lgHidden>
               <img src={hamburgerIcon} className="hamburgerIcon" onClick={this.openModal} alt="Hamburger icon"/>
-
-
               <Modal show={this.state.showModal} onHide={this.closeModal}>
                 <Modal.Header closeButton>
                 <Modal.Title>Saved Snapshots</Modal.Title>
@@ -66,14 +60,10 @@ class SavedSearches extends Component {
                   <p>{saved}</p>
                 </Modal.Body>
               </Modal>
-
-            </Col>
-
-          </Row>
-
-        </Col>
-
-      </Row>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }

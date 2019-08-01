@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col } from 'react-bootstrap';
 
 import ForecastItem from "./ForecastItem";
 
@@ -17,16 +16,14 @@ class Forecasts extends Component {
     }
 
     return (
-      <Row id="Forecasts">
-        <Col xs={12}>
+      <div id="Forecasts">
           <div  className="weatherBlock" id="ForecastsBlock">
             <p className="cardHead">7 day forecast in <span className="altColor">{this.props.searchedWeather.location}:</span></p>
               <div>
               {forecasts}
               </div>
           </div>
-        </Col>
-      </Row>
+      </div>
     );
   }
 }

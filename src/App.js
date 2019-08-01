@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import './App.css';
 import uuid from 'uuid';
-import { Grid, Row, Col } from 'react-bootstrap';
 
 
 import UnitSelect from './Components/UnitSelect/UnitSelect';
@@ -112,56 +111,31 @@ class App extends Component {
 
   render() {
     return (
-      <Grid className="App">
-
-        <Row className="headSection">
-
-          <Col xs={6} sm={3}>
+      <div className="App">
+        <div className="head-section">
             <SavedSearches saved={this.state.saved} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit} onDelete={this.deleteWeather}/>
-          </Col>
-
-          <Col xs={6} smHidden mdHidden lgHidden>
             <UnitSelect setScale={this.setScale} scale={this.state.scale}/>
-          </Col>
-
-          <Col xs={12} sm={6}>
             <SearchBar setCity={this.setCity}/>
-          </Col>
+        </div>
 
-          <Col xsHidden sm={3}>
-            <UnitSelect setScale={this.setScale} scale={this.state.scale}/>
-          </Col>
-
-        </Row>
-
-        <Row className="bodySection">
-          <Col xs={12} sm={4}>
+        <div className="bodySection">
             <MyWeatherContainer API_KEY={this.state.API_KEY} scale={this.state.scale} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit}/>
-          </Col>
-          <Col xs={12} sm={4}>
             {this.state.searchTerm ? <TheirWeather searchedWeather={this.state.searchedWeather} scale={this.state.scale} tempUnit={this.state.tempUnit}
             windUnit={this.state.windUnit}/>
             : <h3 className="whiteText">Enter a city to get started</h3>}
-          </Col>
-          <Col xs={12} sm={4}>
           {this.state.searchTerm ? <Forecasts forecasts={this.state.forecasts} scale={this.state.scale}
           tempUnit={this.state.tempUnit} windUnit={this.state.windUnit} searchedWeather={this.state.searchedWeather}/>: ''}
-          </Col>
-        </Row>
+        </div>
 
-        <Row className="saveSection">
-          <Col xs={12}>
-          {this.state.searchTerm ?  <SaveWeather saveWeather={this.saveWeather} searchedWeather={this.state.searchedWeather}  /> : '' }
-          </Col>
-        </Row>
+        <div className="saveSection">
+            {this.state.searchTerm ?  <SaveWeather saveWeather={this.saveWeather} searchedWeather={this.state.searchedWeather}  /> : '' }
+        </div>
 
-        <Row className="footerSection">
-          <Col xs={12}>
+        {/*Footer section marked for deletion. Apply styles to Footer component*/}
+        <div>
           <Footer />
-          </Col>
-        </Row>
-
-      </Grid>
+        </div>
+      </div>
     );
   }
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col } from 'react-bootstrap';
 
 class MyWeather extends Component {
 
@@ -9,8 +8,8 @@ class MyWeather extends Component {
 
     return (
 
-      <Row id="MyWeather">
-        <Col xs={12}>
+      <div id="MyWeather">
+        <div>
           <div className="weatherBlock">
             <p className="cardHead"> Here, in <span className="altColor">{localWeather.location}</span></p>
             <p> Temperature right now : <span className="altColor"> {localWeather.currentTemp} {this.props.tempUnit}</span></p>
@@ -18,8 +17,8 @@ class MyWeather extends Component {
             <p> Current weather conditions: <span className="altColor">{localWeather.conditions}</span></p>
             <p>Wind speed: <span className="altColor">{localWeather.windSpeed} {this.props.windUnit}</span></p>
           </div>
-        </Col>
-      </Row>
+        </div>
+      </div>
     );
   }
 }
