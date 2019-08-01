@@ -14,10 +14,14 @@ class SaveWeather extends Component {
     this.props.saveWeather(this.props.searchedWeather);
   }
 
+
   render() {
       return(
-      <div id="SaveWeather">
-          <Button bsStyle="primary" type="submit" onClick={this.saveWeather} value="Save">Save snapshot</Button>
+      <div className="saveSection">
+        {this.props.searchTerm ?
+        <div id="SaveWeather">
+            <Button bsStyle="primary" type="submit" onClick={this.saveWeather} value="Save">Save snapshot</Button>
+        </div> : ''}
       </div>
     );
   }

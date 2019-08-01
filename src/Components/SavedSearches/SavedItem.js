@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 
 class SavedItem extends Component {
   deleteWeather(id){
-    this.props.onDelete(id);
+    this.props.deleteSnapshot(id);
   }
 
   render() {

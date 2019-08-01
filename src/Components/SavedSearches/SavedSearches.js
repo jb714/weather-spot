@@ -39,18 +39,22 @@ class SavedSearches extends Component {
     const saved = this.props.saved.map(item =>{
       console.log(item.id)
         return <div key={item.id}>
-        <SavedItem item={item} tempUnit={this.props.tempUnit} windUnit={this.props.windUnit} onDelete={this.deleteWeather}/>
+        <SavedItem
+          item={item}
+          tempUnit={this.props.tempUnit}
+          windUnit={this.props.windUnit}
+          deleteSnapshot={this.props.deleteSnapshot}/>
         </div>
       })
     return (
       <div id="SavedSearches">
         <div>
           <div>
-            <div xsHidden>
+            <div className="d-none d-sm-block">
             <h4>Saved Snapshots</h4>
             <span>{saved}</span>
             </div>
-            <div smHidden mdHidden lgHidden>
+            <div className="d-xs-block d-sm-none">
               <img src={hamburgerIcon} className="hamburgerIcon" onClick={this.openModal} alt="Hamburger icon"/>
               <Modal show={this.state.showModal} onHide={this.closeModal}>
                 <Modal.Header closeButton>

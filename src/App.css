@@ -17,7 +17,9 @@ hr {
 /*****************++++++++++++++++++++++Head Section++++++++++++++++++++++*****************/
 /*headSection and subcomponents styling*/
 .head-section {
-  padding-bottom: 50px;
+  display: flex;
+  justify-content: space-around;
+  padding: 48px 0px;
   text-align: center;
   background-color: #00AAFF;
   color: white;
@@ -35,12 +37,26 @@ hr {
 }
 
 /*SearhBar and subcomponents styling*/
+.page-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title-and-icons {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}
+
 .searchbar {
   text-align: center;
   vertical-align: middle;
 }
 
-.PageHeader {
+.app-title {
+  font-size: 32px;
+  margin: 0px 48px;
   text-decoration: none;
   border: none;
 }
@@ -81,7 +97,9 @@ hr {
 
 /*****************++++++++++++++++++++++Body Section++++++++++++++++++++++*****************/
 
-  .bodySection {
+  .body-section {
+    display: flex;
+    justify-content: space-around;
     padding: 50px 0px 0px 0px;
     border: 1px solid #FFFFFF;
     border-bottom: 0px;
@@ -124,10 +142,17 @@ hr {
 }
 
 
-.footerSection {
-  padding-top: 40px;
-  height: 200px;
+.footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 0px;
   background-color: #00AAFF;
+  font-size: 36px;
+}
+
+.attribution {
+  font-size: 16px;
+  color: white;
 }
 
 .align-right {
@@ -136,10 +161,6 @@ hr {
 
 .align-left {
   text-align: left;
-}
-
-.attribution {
-  color: white;
 }
 
 .altColor{

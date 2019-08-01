@@ -4,12 +4,8 @@ import './App.css';
 import uuid from 'uuid';
 
 
-import UnitSelect from './Components/UnitSelect/UnitSelect';
-import SearchBar from './Components/SearchBar/SearchBar';
-import MyWeatherContainer from './Components/MyWeather/MyWeatherContainer';
-import TheirWeather from './Components/TheirWeather/TheirWeather';
-import Forecasts from './Components/Forecasts/Forecasts';
-import SavedSearches from './Components/SavedSearches/SavedSearches';
+import HeadSection from './Components/HeadSection';
+import BodySection from './Components/BodySection';
 import SaveWeather from './Components/SavedSearches/SaveWeather';
 import Footer from './Components/Footer/Footer';
 
@@ -31,7 +27,7 @@ class App extends Component {
     this.setCity = this.setCity.bind(this);
     this.setScale = this.setScale.bind(this);
     this.saveWeather = this.saveWeather.bind(this);
-    this.deleteWeather = this.deleteWeather.bind(this);
+    this.deleteSnapshot = this.deleteSnapshot.bind(this);
   }
 
   //Set the temperature scale and the units that will be used throughout the application
@@ -50,7 +46,7 @@ class App extends Component {
     this.setState({saved: saved});
   }
 
-  deleteWeather(id){
+  deleteSnapshot(id){
     let saved = this.state.saved;
     let index = saved.findIndex(x => x.id === id);
     saved.splice(index, 1);
@@ -112,29 +108,28 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="head-section">
-            <SavedSearches saved={this.state.saved} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit} onDelete={this.deleteWeather}/>
-            <UnitSelect setScale={this.setScale} scale={this.state.scale}/>
-            <SearchBar setCity={this.setCity}/>
-        </div>
-
-        <div className="bodySection">
-            <MyWeatherContainer API_KEY={this.state.API_KEY} scale={this.state.scale} tempUnit={this.state.tempUnit} windUnit={this.state.windUnit}/>
-            {this.state.searchTerm ? <TheirWeather searchedWeather={this.state.searchedWeather} scale={this.state.scale} tempUnit={this.state.tempUnit}
-            windUnit={this.state.windUnit}/>
-            : <h3 className="whiteText">Enter a city to get started</h3>}
-          {this.state.searchTerm ? <Forecasts forecasts={this.state.forecasts} scale={this.state.scale}
-          tempUnit={this.state.tempUnit} windUnit={this.state.windUnit} searchedWeather={this.state.searchedWeather}/>: ''}
-        </div>
-
-        <div className="saveSection">
-            {this.state.searchTerm ?  <SaveWeather saveWeather={this.saveWeather} searchedWeather={this.state.searchedWeather}  /> : '' }
-        </div>
-
-        {/*Footer section marked for deletion. Apply styles to Footer component*/}
-        <div>
-          <Footer />
-        </div>
+        <HeadSection
+          saved={this.state.saved}
+          tempUnit={this.state.tempUnit}
+          windUnit={this.state.windUnit}
+          deleteSnapshot={this.deleteSnapshot}
+          setCity={this.setCity}
+          setScale={this.setScale}
+          scale={this.state.scale}
+          />
+        <BodySection
+          API_KEY={this.state.API_KEY}
+          scale={this.state.scale}
+          tempUnit={this.state.tempUnit}
+          windUnit={this.state.windUnit}
+          searchedWeather={this.state.searchedWeather}
+          forecasts={this.state.forecasts}
+          searchTerm={this.state.searchTerm}/>
+        <SaveWeather
+          saveWeather={this.saveWeather}
+          searchedWeather={this.state.searchedWeather}
+          searchTerm={this.state.searchTerm}/>
+        <Footer />
       </div>
     );
   }
