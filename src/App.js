@@ -14,12 +14,11 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      API_KEY: 'c48579c123cab4d7e33f94e32b70aa4a',
       searchTerm: '',
       searchedWeather: {},
       saved: [],
       forecasts: {},
-      scale: "Fahrenheit",
+      scale: "imperial",
       tempUnit: <span>&#8457;</span>,
       windUnit: "mph",
     }
@@ -54,14 +53,14 @@ class App extends Component {
   }
 
 
-  getWeather(){
+  getWeather() {
+    const {
+      scale
+    } = this.state;
+    const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+
     $.ajax({
-      /*========Ternary conditional statements determining which type of temperature unit will be used===========*/
-      url: (this.state.scale === "Fahrenheit") ?
-      "http://api.openweathermap.org/data/2.5/weather?q="+this.state.searchTerm+ "&units=imperial&appid="+ this.state.API_KEY :
-      (this.state.scale === "Metric") ?
-      "http://api.openweathermap.org/data/2.5/weather?q="+this.state.searchTerm+ "&units=metric&appid="+ this.state.API_KEY
-      : "http://api.openweathermap.org/data/2.5/weather?q="+this.state.searchTerm+ "&units=default&appid="+ this.state.API_KEY,
+      url: 'http://api.openweathermap.org/data/2.5/weather?q='+this.state.searchTerm+ '&units='+this.state.scale+'&appid='+API_KEY,
 
       dataType: 'json',
       cache: false,
@@ -84,13 +83,7 @@ class App extends Component {
     });
 
     $.ajax({
-      /*========Ternary conditional statements determining which type of temperature unit will be used===========*/
-      url: (this.state.scale === "Fahrenheit") ?
-      "http://api.openweathermap.org/data/2.5/forecast/daily?q="+this.state.searchTerm+ "&units=imperial&appid="+ this.state.API_KEY :
-      (this.state.scale === "Metric") ?
-      "http://api.openweathermap.org/data/2.5/forecast/daily?q="+this.state.searchTerm+ "&units=metric&appid="+ this.state.API_KEY
-      : "http://api.openweathermap.org/data/2.5/forecast/daily?q="+this.state.searchTerm+ "&units=default&appid="+ this.state.API_KEY,
-
+      url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+this.state.searchTerm+ '&units='+this.state.scale+'&appid='+API_KEY,
       dataType: 'json',
       cache: false,
       success: function(data){
@@ -118,7 +111,6 @@ class App extends Component {
           scale={this.state.scale}
           />
         <BodySection
-          API_KEY={this.state.API_KEY}
           scale={this.state.scale}
           tempUnit={this.state.tempUnit}
           windUnit={this.state.windUnit}

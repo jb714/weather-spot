@@ -10,7 +10,7 @@ class UnitSelect extends Component {
     super(props);
 
     this.state = {
-      value: "Fahrenheit"
+      value: "imperial"
     }
     this.handleChange=this.handleChange.bind(this);
   }
@@ -20,11 +20,11 @@ class UnitSelect extends Component {
     let tempUnit = <span>&#8457;</span>;
     let windUnit = "meters/second";
 
-    if(scale === "Fahrenheit"){
+    if(scale === "imperial"){
       tempUnit= <span>&#8457;</span>;
       windUnit= "mph";
 
-    } else if (scale === "Metric"){
+    } else if (scale === "metric"){
       tempUnit= <span>&deg;C</span>;
       windUnit: "meters/second";
     } else {
@@ -40,7 +40,7 @@ class UnitSelect extends Component {
   render() {
 
     return (
-      <div className="unit-select" >
+      <div className="unit-select">
         <div>
           <div>
             <div>
@@ -51,9 +51,9 @@ class UnitSelect extends Component {
             <div>
             <FormGroup>
               <FormControl className="unit-dropdown" componentClass="select" value={this.state.value} onChange={this.handleChange}>
-              <option value="Fahrenheit" >Fahrenheit (&#8457;)</option>
-              <option value="Metric" >Metric (&deg;C)</option>
-              <option value="Kelvin">Kelvin (K)</option>
+              <option value="imperial" >Imperial (&#8457;)</option>
+              <option value="metric" >Metric (&deg;C)</option>
+              <option value="kelvin">Kelvin (K)</option>
               </FormControl>
             </FormGroup>
           </div>

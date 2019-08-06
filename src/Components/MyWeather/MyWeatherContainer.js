@@ -29,18 +29,17 @@ class MyWeatherContainer extends Component {
 
   getMyWeather(){
 
+    const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+
     window.navigator.geolocation.getCurrentPosition(position => {
+
       var newLat = position.coords.latitude;
       var newLon = position.coords.longitude;
 
     $.ajax({
       /*========Ternary conditional statements determining which type of temperature unit will be used===========*/
-      url: (this.props.scale === "Fahrenheit") ?
-      "http://api.openweathermap.org/data/2.5/weather?lat="+newLat+"&lon="+newLon+"&units=imperial&appid=" + this.props.API_KEY:
-      (this.props.scale === "Metric") ?
-      "http://api.openweathermap.org/data/2.5/weather?lat="+newLat+"&lon="+newLon+"&units=metric&appid=" + this.props.API_KEY :
-      "http://api.openweathermap.org/data/2.5/weather?lat="+newLat+"&lon="+newLon+"&units=default&appid=" + this.props.API_KEY
-      ,
+
+      url: 'http://api.openweathermap.org/data/2.5/weather?lat='+newLat+"&lon="+newLon+'&units='+this.props.scale+'&appid='+API_KEY,
       dataType: 'json',
       cache: false,
       success: function(data){
@@ -65,7 +64,10 @@ class MyWeatherContainer extends Component {
 
     return (
       <div>
-          <MyWeather localWeather={this.state.localWeather} tempUnit={this.props.tempUnit} windUnit={this.props.windUnit}/>
+          <MyWeather
+            localWeather={this.state.localWeather}
+            tempUnit={this.props.tempUnit}
+            windUnit={this.props.windUnit}/>
       </div>
     );
   }
@@ -73,7 +75,6 @@ class MyWeatherContainer extends Component {
 
 MyWeatherContainer.propTypes = {
   saved: PropTypes.array,
-  API_KEY: PropTypes.string,
   scale: PropTypes.string,
   tempUnit: PropTypes.object,
   windUnit: PropTypes.string,

@@ -5,7 +5,7 @@
 
 .App {
   font-family: arial;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
@@ -56,7 +56,7 @@ hr {
 
 .app-title {
   font-size: 32px;
-  margin: 0px 48px;
+  /* margin: 0px 48px; */
   text-decoration: none;
   border: none;
 }
@@ -107,7 +107,8 @@ hr {
     text-align: center;
   }
 
-  .weatherBlock {
+  .weather-block {
+    min-width: 280px;
     margin: auto 0;
     margin-bottom: 10px;
     height: 180px;

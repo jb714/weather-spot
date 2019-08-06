@@ -11,7 +11,7 @@ class TheirWeather extends Component {
     return (
       <div id="TheirWeather">
         <div>
-          <div className="weatherBlock">
+          <div className="weather-block">
             <p className="cardHead"> Over there, in <span className="altColor">{searchedWeather.location}</span></p>
             <p>Temperature right now : <span className="altColor">{searchedWeather.currentTemp} {this.props.tempUnit}</span></p>
             <p> Humidity: <span className="altColor">{searchedWeather.humidity}</span> </p>

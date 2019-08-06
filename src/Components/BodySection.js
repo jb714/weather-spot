@@ -6,11 +6,11 @@ import Forecasts from './Forecasts/Forecasts';
 
 class BodySection extends Component {
 
+//<h3 className="whiteText">Enter a city to get started</h3>
   render() {
     return (
         <div className="body-section">
             <MyWeatherContainer
-              API_KEY={this.props.API_KEY}
               scale={this.props.scale}
               tempUnit={this.props.tempUnit}
               windUnit={this.props.windUnit}/>
@@ -19,14 +19,16 @@ class BodySection extends Component {
                 searchedWeather={this.props.searchedWeather}
                 scale={this.props.scale}
                 tempUnit={this.props.tempUnit}
-                windUnit={this.props.windUnit}/> : <h3 className="whiteText">Enter a city to get started</h3>}
+                windUnit={this.props.windUnit}/>
+              : ''}
             {this.props.searchTerm ?
               <Forecasts
                 forecasts={this.props.forecasts}
                 scale={this.props.scale}
                 tempUnit={this.props.tempUnit}
                 windUnit={this.props.windUnit}
-                searchedWeather={this.props.searchedWeather}/> : ''}
+                searchedWeather={this.props.searchedWeather}/>
+              : ''}
         </div>
     );
   }

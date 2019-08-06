@@ -10,7 +10,7 @@ class MyWeather extends Component {
 
       <div id="MyWeather">
         <div>
-          <div className="weatherBlock">
+          <div className="weather-block">
             <p className="cardHead"> Here, in <span className="altColor">{localWeather.location}</span></p>
             <p> Temperature right now : <span className="altColor"> {localWeather.currentTemp} {this.props.tempUnit}</span></p>
             <p> Humidity: <span className="altColor">{localWeather.humidity}</span> </p>
