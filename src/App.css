@@ -1,17 +1,8 @@
 
-/*
-@media(max-width: 992px) {} */
-
-
 .App {
   font-family: arial;
   height: 100%;
   width: 100%;
-}
-
-/*General components to be used throughout*/
-hr {
-  width: 40px;
 }
 
 /*****************++++++++++++++++++++++Head Section++++++++++++++++++++++*****************/
@@ -23,17 +14,6 @@ hr {
   text-align: center;
   background-color: #00AAFF;
   color: white;
-}
-
-
-/*UnitSelect and subcomponents styling*/
-
-.unit-select {
-  text-align: center;
-}
-
-.unit-dropdown {
-  text-align: center;
 }
 
 /*SearhBar and subcomponents styling*/
@@ -74,14 +54,9 @@ hr {
 }
 
 
-#SavedSearches {
+.saved-searches {
   margin: auto 0;
   text-align: left;
-}
-
-#SavedSearchesInner {
-  overflow-y: auto;
-  direction: rtl;
 }
 
 .hamburgerIcon {
@@ -90,52 +65,32 @@ hr {
   padding-top: 3px;
 }
 
-.whiteText {
-  color: white;
-}
-
-
 /*****************++++++++++++++++++++++Body Section++++++++++++++++++++++*****************/
 
   .body-section {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     padding: 50px 0px 0px 0px;
     border: 1px solid #FFFFFF;
     border-bottom: 0px;
     background-color: #5ad9f9;
-    text-align: center;
   }
 
   .weather-block {
     min-width: 280px;
     margin: auto 0;
     margin-bottom: 10px;
-    height: 180px;
+    height: 220px;
     overflow-y: auto;
     background-color: #FFFFFF;
     padding: 5px;
     border: 2px solid #D9D9D9;;
     border-radius: 5px;
   }
-
-
-.forecastItem {
-  font-size: 12px;
-  text-align: center;
-}
 /*SaveWeather and subcomponents styling*/
-
-#SaveWeather {
+.save-section {
   text-align: center;
-}
-
-#SaveWeatherInner {
-  display: inline-block;
-  text-align: left;
-}
-
-.saveSection {
   background-color: #5ad9f9;
   padding: 5px 0px 50px 0px;
   border: 1px solid #FFFFFF;
@@ -156,6 +111,10 @@ hr {
   color: white;
 }
 
+
+
+/*Utility classes*/
+
 .align-right {
   text-align: right;
 }
@@ -164,9 +123,13 @@ hr {
   text-align: left;
 }
 
-.altColor{
+.purple-text {
   color: purple;
   font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
 }
 
 a {
@@ -176,4 +139,8 @@ a {
 
 a:hover {
   color: purple;
+}
+
+hr {
+  width: 40px;
 }

@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 import MyWeatherContainer from './MyWeather/MyWeatherContainer';
 import TheirWeather from './TheirWeather/TheirWeather';
 import Forecasts from './Forecasts/Forecasts';
+import SaveWeather from './SavedSearches/SaveWeather';
 
 class BodySection extends Component {
-
-//<h3 className="whiteText">Enter a city to get started</h3>
+  
   render() {
     return (
+      <div>
         <div className="body-section">
             <MyWeatherContainer
               scale={this.props.scale}
@@ -30,6 +31,11 @@ class BodySection extends Component {
                 searchedWeather={this.props.searchedWeather}/>
               : ''}
         </div>
+        <SaveWeather
+          saveWeather={this.props.saveWeather}
+          searchedWeather={this.props.searchedWeather}
+          searchTerm={this.props.searchTerm}/>
+      </div>
     );
   }
 }

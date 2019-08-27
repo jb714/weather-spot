@@ -6,7 +6,6 @@ import uuid from 'uuid';
 
 import HeadSection from './Components/HeadSection';
 import BodySection from './Components/BodySection';
-import SaveWeather from './Components/SavedSearches/SaveWeather';
 import Footer from './Components/Footer/Footer';
 
 class App extends Component {
@@ -22,30 +21,25 @@ class App extends Component {
       tempUnit: <span>&#8457;</span>,
       windUnit: "mph",
     }
-    this.getWeather = this.getWeather.bind(this);
-    this.setCity = this.setCity.bind(this);
-    this.setScale = this.setScale.bind(this);
-    this.saveWeather = this.saveWeather.bind(this);
-    this.deleteSnapshot = this.deleteSnapshot.bind(this);
   }
 
   //Set the temperature scale and the units that will be used throughout the application
-  setScale(scale, tempUnit, windUnit){
+  setScale = (scale, tempUnit, windUnit) => {
     this.setState({scale: scale, tempUnit: tempUnit, windUnit: windUnit}, this.getWeather);
   }
 
-  setCity(city){
+  setCity = (city) => {
     //Set the city that will be used in dynamic searching, and set getWeather as a callback after the state sets
     this.setState({searchTerm: city},this.getWeather);
   }
 
-  saveWeather(weather){
+  saveWeather = (weather) => {
     let saved = this.state.saved;
     saved.push(weather);
     this.setState({saved: saved});
   }
 
-  deleteSnapshot(id){
+  deleteSnapshot = (id) => {
     let saved = this.state.saved;
     let index = saved.findIndex(x => x.id === id);
     saved.splice(index, 1);
@@ -53,7 +47,7 @@ class App extends Component {
   }
 
 
-  getWeather() {
+  getWeather = () => {
     const {
       scale
     } = this.state;
@@ -116,11 +110,9 @@ class App extends Component {
           windUnit={this.state.windUnit}
           searchedWeather={this.state.searchedWeather}
           forecasts={this.state.forecasts}
-          searchTerm={this.state.searchTerm}/>
-        <SaveWeather
+          searchTerm={this.state.searchTerm}
           saveWeather={this.saveWeather}
-          searchedWeather={this.state.searchedWeather}
-          searchTerm={this.state.searchTerm}/>
+          />
         <Footer />
       </div>
     );

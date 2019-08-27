@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
 
 
 class SavedItem extends Component {
@@ -14,7 +13,7 @@ class SavedItem extends Component {
     return (
 
       <div className="SavedSearches">
-        <p>{item.location} is experiencing {item.description} <Button bsStyle="warning" bsSize="xsmall" onClick={this.deleteWeather.bind(this, this.props.item.id)}>X</Button></p>
+        <p>It's 73 &#8457; and {item.description} in {item.location} <button onClick={this.deleteWeather.bind(this, this.props.item.id)}>X</button></p>
       </div>
     );
   }

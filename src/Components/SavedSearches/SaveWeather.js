@@ -5,23 +5,14 @@ import { Button } from 'react-bootstrap';
 
 class SaveWeather extends Component {
 
-  constructor(props){
-    super(props);
-    this.saveWeather = this.saveWeather.bind(this);
-  }
-
-  saveWeather(){
+  saveWeather = () => {
     this.props.saveWeather(this.props.searchedWeather);
   }
 
-
   render() {
       return(
-      <div className="saveSection">
-        {this.props.searchTerm ?
-        <div id="SaveWeather">
-            <Button bsStyle="primary" type="submit" onClick={this.saveWeather} value="Save">Save snapshot</Button>
-        </div> : ''}
+      <div className="save-section">
+        {this.props.searchTerm ? <Button type="submit" onClick={this.saveWeather} value="Save">Save snapshot</Button> : ''}
       </div>
     );
   }

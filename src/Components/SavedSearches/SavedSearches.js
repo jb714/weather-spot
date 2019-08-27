@@ -37,7 +37,6 @@ class SavedSearches extends Component {
 
   render() {
     const saved = this.props.saved.map(item =>{
-      console.log(item.id)
         return <div key={item.id}>
         <SavedItem
           item={item}
@@ -47,24 +46,22 @@ class SavedSearches extends Component {
         </div>
       })
     return (
-      <div id="SavedSearches">
+      <div className="saved-searcheds">
         <div>
-          <div>
-            <div className="d-none d-sm-block">
-            <h4>Saved Snapshots</h4>
-            <span>{saved}</span>
-            </div>
-            <div className="d-xs-block d-sm-none">
-              <img src={hamburgerIcon} className="hamburgerIcon" onClick={this.openModal} alt="Hamburger icon"/>
-              <Modal show={this.state.showModal} onHide={this.closeModal}>
-                <Modal.Header closeButton>
-                <Modal.Title>Saved Snapshots</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  <p>{saved}</p>
-                </Modal.Body>
-              </Modal>
-            </div>
+          <div className="d-none d-sm-block">
+          <h4>Saved Snapshots</h4>
+          <span>{saved}</span>
+          </div>
+          <div className="d-xs-block d-sm-none">
+            <img src={hamburgerIcon} className="hamburgerIcon" onClick={this.openModal} alt="Hamburger icon"/>
+            <Modal show={this.state.showModal} onHide={this.closeModal}>
+              <Modal.Header closeButton>
+              <Modal.Title>Saved Snapshots</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <p>{saved}</p>
+              </Modal.Body>
+            </Modal>
           </div>
         </div>
       </div>

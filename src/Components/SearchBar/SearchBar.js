@@ -10,19 +10,16 @@ class SearchBar extends Component {
     this.state={
       value: ''
     };
-
-    this.handleSubmit=this.handleSubmit.bind(this);
-    this.handleChange=this.handleChange.bind(this);
   }
 
 
-  handleSubmit(e){
+  handleSubmit = (e) => {
     e.preventDefault();
     const city = this.state.value;
     this.props.setCity(city);
   }
 
-  handleChange(e){
+  handleChange = (e) => {
     const city = e.target.value;
     this.setState({value: city});
   }
