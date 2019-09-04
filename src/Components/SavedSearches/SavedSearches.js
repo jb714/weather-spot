@@ -13,25 +13,19 @@ class SavedSearches extends Component {
     this.state = {
       showModal: false
     }
-
-    this.tempUnit = <span>&#8457;</span>
-    this.windUnit = "mph";
-    this.deleteWeather = this.deleteWeather.bind(this);
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
   }
 
-  openModal() {
+  openModal = () => {
 
     this.setState({ showModal: true }, console.log("After", this.state.showModal));
 
   }
 
-  closeModal() {
+  closeModal = () => {
     this.setState({ showModal: false });
   }
 
-  deleteWeather(id){
+  deleteWeather = (id) => {
     this.props.onDelete(id);
   }
 
@@ -46,14 +40,14 @@ class SavedSearches extends Component {
         </div>
       })
     return (
-      <div className="saved-searcheds">
+      <div className="saved-searches">
         <div>
           <div className="d-none d-sm-block">
           <h4>Saved Snapshots</h4>
           <span>{saved}</span>
           </div>
           <div className="d-xs-block d-sm-none">
-            <img src={hamburgerIcon} className="hamburgerIcon" onClick={this.openModal} alt="Hamburger icon"/>
+            <img src={hamburgerIcon} className="icon" onClick={this.openModal} alt="Hamburger icon"/>
             <Modal show={this.state.showModal} onHide={this.closeModal}>
               <Modal.Header closeButton>
               <Modal.Title>Saved Snapshots</Modal.Title>

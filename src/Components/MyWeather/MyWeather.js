@@ -6,8 +6,6 @@ class MyWeather extends Component {
   render() {
     const localWeather = this.props.localWeather;
 
-    console.log('localWeather!', localWeather);
-    
     return (
       <div id="MyWeather">
         <div>

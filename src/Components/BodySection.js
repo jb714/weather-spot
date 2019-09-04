@@ -6,7 +6,7 @@ import Forecasts from './Forecasts/Forecasts';
 import SaveWeather from './SavedSearches/SaveWeather';
 
 class BodySection extends Component {
-  
+
   render() {
     return (
       <div>
@@ -32,6 +32,7 @@ class BodySection extends Component {
               : ''}
         </div>
         <SaveWeather
+          saved={this.props.saved}
           saveWeather={this.props.saveWeather}
           searchedWeather={this.props.searchedWeather}
           searchTerm={this.props.searchTerm}/>

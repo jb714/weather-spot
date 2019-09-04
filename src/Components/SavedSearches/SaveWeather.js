@@ -10,9 +10,13 @@ class SaveWeather extends Component {
   }
 
   render() {
+      const {
+        saved
+      } = this.props;
+
       return(
       <div className="save-section">
-        {this.props.searchTerm ? <Button type="submit" onClick={this.saveWeather} value="Save">Save snapshot</Button> : ''}
+        {this.props.searchTerm && saved.length < 3 ? <Button type="submit" onClick={this.saveWeather} value="Save">Save snapshot</Button> : ''}
       </div>
     );
   }

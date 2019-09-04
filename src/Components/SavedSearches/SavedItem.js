@@ -3,17 +3,20 @@ import PropTypes from 'prop-types';
 
 
 class SavedItem extends Component {
-  deleteWeather(id){
+
+  deleteWeather = (id) => {
     this.props.deleteSnapshot(id);
   }
 
   render() {
-    const item = this.props.item;
+    const {
+      item
+    } = this.props;
 
     return (
 
-      <div className="SavedSearches">
-        <p>It's 73 &#8457; and {item.description} in {item.location} <button onClick={this.deleteWeather.bind(this, this.props.item.id)}>X</button></p>
+      <div className="saved-item">
+        <p>It's {item.description} in {item.location} <button onClick={this.deleteWeather.bind(this, this.props.item.id)}>x</button></p>
       </div>
     );
   }

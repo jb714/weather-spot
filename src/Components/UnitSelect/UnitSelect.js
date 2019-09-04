@@ -16,6 +16,7 @@ class UnitSelect extends Component {
 
   handleChange = (e) => {
     const scale = e.target.value;
+    
     let tempUnit = <span>&#8457;</span>;
     let windUnit = "meters/second";
 
@@ -39,15 +40,13 @@ class UnitSelect extends Component {
   render() {
 
     return (
-      <div>
-        <h4>Temp Units</h4>
-        <FormGroup>
-          <FormControl componentClass="select" value={this.state.value} onChange={this.handleChange}>
-          <option value="imperial" >Imperial (&#8457;)</option>
-          <option value="metric" >Metric (&deg;C)</option>
-          <option value="kelvin">Kelvin (K)</option>
+      <div className='unit-select'>
+          <label htmlFor="UnitSelect">Temp Units:</label>
+          <FormControl id="UnitSelect" componentClass="select" value={this.state.value} onChange={this.handleChange}>
+            <option value="imperial" >Imperial (&#8457;)</option>
+            <option value="metric" >Metric (&deg;C)</option>
+            <option value="kelvin">Kelvin (K)</option>
           </FormControl>
-        </FormGroup>
       </div>
     );
   }

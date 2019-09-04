@@ -1,6 +1,6 @@
 
 .App {
-  font-family: arial;
+  font-family: Arial, serif;
   height: 100%;
   width: 100%;
 }
@@ -8,9 +8,10 @@
 /*****************++++++++++++++++++++++Head Section++++++++++++++++++++++*****************/
 /*headSection and subcomponents styling*/
 .head-section {
+  height: 200px;
   display: flex;
   justify-content: space-around;
-  padding: 48px 0px;
+  /* padding: 48px 0px; */
   text-align: center;
   background-color: #00AAFF;
   color: white;
@@ -18,11 +19,15 @@
 
 /*SearhBar and subcomponents styling*/
 .page-header {
+  flex-basis: 500px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+
 .title-and-icons {
   display: flex;
   justify-content: space-between;
@@ -36,13 +41,12 @@
 
 .app-title {
   font-size: 32px;
-  /* margin: 0px 48px; */
+  margin: 0px 16px;
   text-decoration: none;
   border: none;
 }
 
 .icon {
-  text-align: center;
   width: 45px;
 }
 
@@ -53,18 +57,30 @@
   font-size: 20px;
 }
 
-
 .saved-searches {
+  flex: 0 0 20%;
+  overflow: auto;
   margin: auto 0;
   text-align: left;
 }
 
-.hamburgerIcon {
+.saved-item {
+  font-size: 12px;
+}
+
+.saved-item button {
+  padding: 1px 2px;
+}
+
+/* .hamburgerIcon {
   margin: auto 0;
   width: 50px;
   padding-top: 3px;
-}
+} */
 
+.unit-select {
+  flex: 0 0 20%;
+}
 /*****************++++++++++++++++++++++Body Section++++++++++++++++++++++*****************/
 
   .body-section {
@@ -91,6 +107,8 @@
 /*SaveWeather and subcomponents styling*/
 .save-section {
   text-align: center;
+  max-height: 200px;
+  overflow-y: auto;
   background-color: #5ad9f9;
   padding: 5px 0px 50px 0px;
   border: 1px solid #FFFFFF;

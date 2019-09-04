@@ -105,6 +105,7 @@ class App extends Component {
           scale={this.state.scale}
           />
         <BodySection
+          saved={this.state.saved}
           scale={this.state.scale}
           tempUnit={this.state.tempUnit}
           windUnit={this.state.windUnit}
