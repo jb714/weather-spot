@@ -26,9 +26,8 @@ class SearchBar extends Component {
 
 
   render() {
-
     return (
-    <div className="searchbar">
+      <div className="searchbar">
         <div>
           <Form inline onSubmit={this.handleSubmit}>
               <FormGroup>
@@ -38,9 +37,6 @@ class SearchBar extends Component {
           </Form>
         </div>
       </div>
-
-
-
     );
   }
 }

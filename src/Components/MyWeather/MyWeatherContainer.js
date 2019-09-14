@@ -37,8 +37,6 @@ class MyWeatherContainer extends Component {
       var newLon = position.coords.longitude;
 
     $.ajax({
-      /*========Ternary conditional statements determining which type of temperature unit will be used===========*/
-
       url: 'http://api.openweathermap.org/data/2.5/weather?lat='+newLat+"&lon="+newLon+'&units='+this.props.scale+'&appid='+API_KEY,
       dataType: 'json',
       cache: false,
