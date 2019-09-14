@@ -9,11 +9,9 @@ class MyWeatherContainer extends Component {
 
   constructor(){
     super();
-
     this.state = {
       localWeather: {},
     }
-    this.getMyWeather = this.getMyWeather.bind(this);
   }
 
   componentDidMount(){
@@ -27,7 +25,7 @@ class MyWeatherContainer extends Component {
   }
 
 
-  getMyWeather(){
+  getMyWeather = () => {
 
     const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
