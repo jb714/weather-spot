@@ -10,18 +10,15 @@ import SavedSearches from './SavedSearches/SavedSearches';
 class HeadSection extends Component {
 
   render() {
+    const props = this.props;
     return (
         <div className="head-section">
-            <SavedSearches
-              saved={this.props.saved}
-              tempUnit={this.props.tempUnit}
-              windUnit={this.props.windUnit}
-              deleteSnapshot={this.props.deleteSnapshot}/>
+            <SavedSearches {...props} />
             <div className="page-header">
               <Title />
-              <SearchBar setCity={this.props.setCity} />
+              <SearchBar setCity={props.setCity} />
             </div>
-            <UnitSelect setScale={this.props.setScale} scale={this.props.scale} />
+            <UnitSelect setScale={props.setScale} scale={props.scale} />
         </div>
     );
   }

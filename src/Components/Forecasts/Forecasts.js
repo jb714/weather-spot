@@ -7,10 +7,11 @@ class Forecasts extends Component {
 
   render() {
     let forecasts;
-    if(this.props.forecasts.list){
-        forecasts = this.props.forecasts.list.map(item =>{
+    const props = this.props;
+    if(props.forecasts.list){
+        forecasts = props.forecasts.list.map(item =>{
           return <div key={item.dt}>
-          <ForecastItem item={item} tempUnit={this.props.tempUnit} windUnit={this.props.windUnit}/>
+          <ForecastItem item={item} {...props}/>
           </div>
         })
     }
@@ -18,7 +19,7 @@ class Forecasts extends Component {
     return (
       <div id="Forecasts">
           <div  className="weather-block" id="ForecastsBlock">
-            <p className="cardHead">7 day forecast in <span className="purple-text">{this.props.searchedWeather.location}:</span></p>
+            <p className="cardHead">7 day forecast in <span className="purple-text">{props.searchedWeather.location}:</span></p>
               <div>
               {forecasts}
               </div>

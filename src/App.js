@@ -91,27 +91,17 @@ class App extends Component {
       }
     });
   }
-
   render() {
     return (
       <div className="App">
         <HeadSection
-          saved={this.state.saved}
-          tempUnit={this.state.tempUnit}
-          windUnit={this.state.windUnit}
+          {...this.state}
           deleteSnapshot={this.deleteSnapshot}
           setCity={this.setCity}
           setScale={this.setScale}
-          scale={this.state.scale}
           />
         <BodySection
-          saved={this.state.saved}
-          scale={this.state.scale}
-          tempUnit={this.state.tempUnit}
-          windUnit={this.state.windUnit}
-          searchedWeather={this.state.searchedWeather}
-          forecasts={this.state.forecasts}
-          searchTerm={this.state.searchTerm}
+          {...this.state}
           saveWeather={this.saveWeather}
           />
         <Footer />

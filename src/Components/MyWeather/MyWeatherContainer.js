@@ -59,12 +59,7 @@ class MyWeatherContainer extends Component {
   render() {
 
     return (
-      <div>
-          <MyWeather
-            localWeather={this.state.localWeather}
-            tempUnit={this.props.tempUnit}
-            windUnit={this.props.windUnit}/>
-      </div>
+          <MyWeather localWeather={this.state.localWeather} {...this.props}/>
     );
   }
 }

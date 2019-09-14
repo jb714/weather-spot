@@ -30,13 +30,10 @@ class SavedSearches extends Component {
   }
 
   render() {
-    const saved = this.props.saved.map(item =>{
+    const props = this.props;
+    const saved = props.saved.map(item =>{
         return <div key={item.id}>
-        <SavedItem
-          item={item}
-          tempUnit={this.props.tempUnit}
-          windUnit={this.props.windUnit}
-          deleteSnapshot={this.props.deleteSnapshot}/>
+        <SavedItem item={item} {...props} />
         </div>
       })
     return (
