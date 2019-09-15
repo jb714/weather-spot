@@ -10,8 +10,8 @@ class BodySection extends Component {
   render() {
     const props = this.props;
     return (
-      <div>
-        <div className="body-section">
+      <div className="body-section">
+        <div className="weather-blocks-section">
             <MyWeatherContainer {...props} />
             {props.searchTerm ? <TheirWeather {...props}/> : ''}
             {props.searchTerm ? <Forecasts {...props}/> : ''}
