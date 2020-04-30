@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "react-scripts": "1.0.3",
-    "jquery": "^3.2.1"
+    "jquery": "^3.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
